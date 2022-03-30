@@ -2,9 +2,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.OpenApi.Models;
 
-namespace FraudDetection
+namespace Fraud.App
 {
     public class Startup
     {
