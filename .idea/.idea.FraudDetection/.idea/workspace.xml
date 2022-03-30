@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Enums/CardState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Enums/TransactionState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Card.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Transaction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FraudDetection.sln" beforeDir="false" afterPath="$PROJECT_DIR$/FraudDetection.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FraudDetection/FraudDetection.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/Fraud.App.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FraudDetection/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FraudDetection/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FraudDetection/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FraudDetection/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FraudDetection/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Entities/Fraud.Entities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/Fraud.Entities.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +25,20 @@
       <option value="$PROJECT_DIR$/FraudDetection/Startup.cs" />
       <option value="$PROJECT_DIR$/FraudDetection/WeatherForecast.cs" />
       <option value="$PROJECT_DIR$/FraudDetection/Program.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/Fraud.Entities.csproj" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Class1.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Fraud.UseCase.csproj" />
+      <option value="$PROJECT_DIR$/Fraud.App/Fraud.App.csproj" />
+      <option value="$PROJECT_DIR$/Fraud.App/Startup.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Concernce/Fraud.Concernce.csproj" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Fraud.Infrastructure.Implementation.csproj" />
+      <option value="$PROJECT_DIR$/Fraud.Interucters/Fraud.Interucters.csproj" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Fraud.Presentation.csproj" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Fraud.Infrastructure.csproj" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Enums/CardState.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Fraud.Entities.csproj" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Enums/TransactionState.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Models/Transaction.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Models/Card.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -85,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648647439899</updated>
-      <workItem from="1648647457891" duration="2293000" />
+      <workItem from="1648647457891" duration="3563000" />
     </task>
     <servers />
   </component>
