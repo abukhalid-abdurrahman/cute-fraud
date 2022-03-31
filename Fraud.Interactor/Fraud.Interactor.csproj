@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Fraud.UseCase\Fraud.UseCase.csproj" />
+  </ItemGroup>
+
 </Project>

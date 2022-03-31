@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Presentation/Configurations/RabbitMqConfigurations.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Presentation/Host/RabbitMqHost.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Presentation/MessageType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Presentation/Services/IMessageBrokerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Presentation/Services/IMessageHandlerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Presentation/Services/IMessageNotifier.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Presentation/Services/MessageHandlerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Presentation/Services/MessageNotifier.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Presentation/Services/RabbitMqMessageBrokerService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/PreSuspiciousCardState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.UseCase/States/ICardState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Presentation/Fraud.Presentation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Presentation/Fraud.Presentation.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interucters/Fraud.Interucters.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Fraud.Interactor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.UseCase/Fraud.UseCase.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.UseCase/Fraud.UseCase.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FraudDetection.sln" beforeDir="false" afterPath="$PROJECT_DIR$/FraudDetection.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +27,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/1D/IModelExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/16/IConnection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/1C/IModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B0227-94B1-4CAD-995F-7CD89708E4CF/28/cfa98ee3/ConnectionFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/37/EventingBasicConsumer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/903EBCB8-20F4-49AA-A7E1-47C69B752DBC/11/IHostedService.cs" root0="SKIP_HIGHLIGHTING" />
@@ -64,11 +63,19 @@
       <option value="$PROJECT_DIR$/Fraud.Presentation/Services/IMessageBrokerService.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Services/RabbitMqMessageBrokerService.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Services/IMessageMapperService.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Presentation/Services/IMessageHandlerService.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/MessageType.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Services/IMessageNotifier.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Services/MessageNotifier.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Host/RabbitMqHost.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/RabbitMqHost.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Services/IMessageHandlerService.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Enums/MessageType.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interucters/States/CardStates/DefaultCardState.cs" />
+      <option value="$PROJECT_DIR$/Fraud.UseCase/States/ICardState.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardState.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/PreSuspiciousCardState.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -125,7 +132,7 @@
       <option name="presentableId" value="Default" />
       <updated>1648647439899</updated>
       <workItem from="1648647457891" duration="5496000" />
-      <workItem from="1648699740222" duration="17463000" />
+      <workItem from="1648699740222" duration="21927000" />
     </task>
     <servers />
   </component>

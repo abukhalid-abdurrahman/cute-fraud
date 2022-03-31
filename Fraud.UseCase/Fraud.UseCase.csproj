@@ -6,5 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Fraud.Entities\Fraud.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
 

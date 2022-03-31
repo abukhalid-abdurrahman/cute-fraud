@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraud.Infrastructure", "Fra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraud.Concernce", "Fraud.Concernce\Fraud.Concernce.csproj", "{F427AE01-CD47-4447-A023-7EDA63C030E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraud.Interucters", "Fraud.Interucters\Fraud.Interucters.csproj", "{97020619-3BE4-4D2A-A081-2D3D33FDB66B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraud.Interactor", "Fraud.Interactor\Fraud.Interactor.csproj", "{97020619-3BE4-4D2A-A081-2D3D33FDB66B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
