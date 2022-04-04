@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Fraud.Entities.Enums;
 using Fraud.Entities.Models;
-using Fraud.UseCase.States;
+using Fraud.UseCase.Cards;
 
 namespace Fraud.Interactor.States.CardStates
 {

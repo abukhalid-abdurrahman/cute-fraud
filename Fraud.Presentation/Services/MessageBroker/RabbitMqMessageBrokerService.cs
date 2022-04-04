@@ -84,6 +84,8 @@ namespace Fraud.Presentation.Services.MessageBroker
 
         private void ReleaseUnmanagedResources()
         {
+            if(_disposed) return;
+            
             _connectionModel.Close();
             _connectionModel.Dispose();
 

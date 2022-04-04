@@ -2,7 +2,7 @@
 using Fraud.Entities.Enums;
 using Fraud.Entities.Models;
 
-namespace Fraud.UseCase.States
+namespace Fraud.UseCase.Cards
 {
     public interface ICardState
     {
