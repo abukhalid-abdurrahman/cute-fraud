@@ -1,4 +1,5 @@
-﻿using Fraud.Entities.Enums;
+﻿using System;
+using Fraud.Entities.Enums;
 
 namespace Fraud.Entities.Models
 {
@@ -7,6 +8,7 @@ namespace Fraud.Entities.Models
         public int Amount { get; set; }
         public string ExternalRef { get; set; }
         public string CardToken { get; set; }
+        public long DateCreatedUnix { get; set; }
         public TransactionState TransactionState { get; set; } = TransactionState.Default;
     }
 }
