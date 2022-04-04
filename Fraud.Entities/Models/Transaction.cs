@@ -1,5 +1,4 @@
-﻿using System;
-using Fraud.Entities.Enums;
+﻿using Fraud.Entities.Enums;
 
 namespace Fraud.Entities.Models
 {
