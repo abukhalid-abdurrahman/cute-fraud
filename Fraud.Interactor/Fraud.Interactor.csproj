@@ -2,11 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Fraud.Infrastructure\Fraud.Infrastructure.csproj" />
     <ProjectReference Include="..\Fraud.UseCase\Fraud.UseCase.csproj" />
   </ItemGroup>
 
