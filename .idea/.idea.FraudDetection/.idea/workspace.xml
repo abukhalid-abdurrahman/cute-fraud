@@ -6,15 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/TransactionAnalyzerResult.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Interactor/CardAnalyzer/CardAnalyzerInteractor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.UseCase/Transactions/ITransactionAnalyzer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FraudDetection.sln.DotSettings.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Entities/Models/Card.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Card.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Fraud.Interactor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Fraud.Interactor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardAnalyzerUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardAnalyzerUseCase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +36,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.Entities/Enums/TransactionState.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concernce/obj/Debug/net5.0/Fraud.Concernce.GlobalUsings.g.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/obj/Debug/net5.0/Fraud.Infrastructure.Implementation.GlobalUsings.g.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/obj/Debug/net5.0/Fraud.Infrastructure.GlobalUsings.g.cs" />
@@ -94,6 +86,7 @@
       <option value="$PROJECT_DIR$/Fraud.UseCase/Transactions/ITransactionAnalyzer.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/TransactionAnalyzerResult.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -173,7 +166,7 @@
       <workItem from="1648647457891" duration="5496000" />
       <workItem from="1648699740222" duration="21927000" />
       <workItem from="1649044675333" duration="15294000" />
-      <workItem from="1649127816156" duration="10674000" />
+      <workItem from="1649127816156" duration="15333000" />
     </task>
     <servers />
   </component>
