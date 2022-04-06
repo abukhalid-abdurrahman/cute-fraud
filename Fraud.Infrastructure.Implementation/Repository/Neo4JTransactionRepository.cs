@@ -50,7 +50,7 @@ namespace Fraud.Infrastructure.Implementation.Repository
             }
         }
 
-        public async Task<IReadOnlyList<Transaction>> FindByDateRange(string cardToken, DateTimeOffset dateFrom, DateTimeOffset dateTo)
+        public async Task<Transaction[]> FindByDateRange(string cardToken, DateTimeOffset dateFrom, DateTimeOffset dateTo)
         {
             if (_disposed)
                 throw new ObjectDisposedException(nameof(Neo4JTransactionRepository));
@@ -76,7 +76,7 @@ namespace Fraud.Infrastructure.Implementation.Repository
                     DateCreatedUnix = x["t.date_created_unix"].As<long>(),
                     ExternalRef = x["t.external_ref"].As<string>(),
                     TransactionState = (TransactionState)x["t.transaction_state"].As<int>()
-                }).ToList();
+                }).ToArray();
             }
             finally
             {
@@ -84,7 +84,7 @@ namespace Fraud.Infrastructure.Implementation.Repository
             }
         }
 
-        public async Task<IReadOnlyList<Transaction>> FindLimit(string cardToken, int limit = 100)
+        public async Task<Transaction[]> FindLimit(string cardToken, int limit = 100)
         {
             if (_disposed)
                 throw new ObjectDisposedException(nameof(Neo4JTransactionRepository));
@@ -110,7 +110,7 @@ namespace Fraud.Infrastructure.Implementation.Repository
                     DateCreatedUnix = x["t.date_created_unix"].As<long>(),
                     ExternalRef = x["t.external_ref"].As<string>(),
                     TransactionState = (TransactionState)x["t.transaction_state"].As<int>()
-                }).ToList();
+                }).ToArray();
             }
             finally
             {

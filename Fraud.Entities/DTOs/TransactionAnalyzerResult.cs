@@ -1,6 +1,6 @@
 ﻿namespace Fraud.Entities.DTOs
 {
-    public ref struct TransactionAnalyzerResult
+    public struct TransactionAnalyzerResult
     {
         public TransactionAnalyzerResult(float fraudPriority, string cardToken)
         {

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
     <PackageReference Include="RabbitMq.Client" Version="6.2.4" />
   </ItemGroup>
 
@@ -13,6 +14,11 @@
     <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=3.1.23.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
       <HintPath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\3.1.23\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fraud.Interactor\Fraud.Interactor.csproj" />
+    <ProjectReference Include="..\Fraud.UseCase\Fraud.UseCase.csproj" />
   </ItemGroup>
 
 </Project>
