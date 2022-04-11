@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraud.Infrastructure.Implem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraud.Infrastructure", "Fraud.Infrastructure\Fraud.Infrastructure.csproj", "{7C30A95B-27E6-4023-90B2-6B795F6D77A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraud.Concernce", "Fraud.Concernce\Fraud.Concernce.csproj", "{F427AE01-CD47-4447-A023-7EDA63C030E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraud.Concerns", "Fraud.Concerns\Fraud.Concerns.csproj", "{F427AE01-CD47-4447-A023-7EDA63C030E9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraud.Interactor", "Fraud.Interactor\Fraud.Interactor.csproj", "{97020619-3BE4-4D2A-A081-2D3D33FDB66B}"
 EndProject

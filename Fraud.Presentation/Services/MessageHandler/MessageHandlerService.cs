@@ -1,5 +1,4 @@
 using System.Text;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Fraud.Entities.Models;
 using Fraud.UseCase.Cards;
