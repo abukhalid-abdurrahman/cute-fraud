@@ -10,6 +10,11 @@ namespace Fraud.Interactor.States.CardStates
         public Card Card { get; set; }
         public CardState CardState => CardState.PreSuspicious;
         
+        public PreSuspiciousCardState(Card card)
+        {
+            Card = card;
+        }
+        
         public async Task HandleState()
         {
             throw new System.NotImplementedException();

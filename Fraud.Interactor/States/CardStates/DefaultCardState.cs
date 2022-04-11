@@ -9,10 +9,15 @@ namespace Fraud.Interactor.States.CardStates
     {
         public Card Card { get; set; }
         public CardState CardState => CardState.Default;
-        
-        public async Task HandleState()
+
+        public DefaultCardState(Card card)
         {
-            throw new System.NotImplementedException();
+            Card = card;
+        }
+
+        public Task HandleState()
+        {
+            return Task.CompletedTask;
         }
     }
 }
