@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using Fraud.Entities.DTOs;
 using Fraud.Entities.Models;
+using Fraud.UseCase.Cards;
 using Fraud.UseCase.Transactions;
 
 namespace Fraud.Interactor.Transactions
@@ -11,6 +11,13 @@ namespace Fraud.Interactor.Transactions
         private readonly int _fraudPriorityStep = 30;
         private readonly int _transactionsIntervalInSeconds = 60;
 
+        private readonly ICardStateManagement _cardStateManagement;
+
+        public PeriodicityAnalyzer(ICardStateManagement cardStateManagement)
+        {
+            _cardStateManagement = cardStateManagement;
+        }
+        
         public TransactionAnalyzerResult AnalyzeTransactions(in Transaction[] transactions)
         {            
             if (transactions == null)
@@ -30,8 +37,13 @@ namespace Fraud.Interactor.Transactions
                 if (transactionInterval <= _transactionsIntervalInSeconds)
                     fraudPriority += _fraudPriorityStep;
             }
-            
-            return new TransactionAnalyzerResult(fraudPriority, transactions[0].CardToken);
+
+            var transactionAnalyzerResult = new TransactionAnalyzerResult(fraudPriority, transactions[0].CardToken);
+
+            // TODO: Remove calling ICardStateManagement.ManageCardState after moving to microservices 
+            _cardStateManagement.ManageCardState(transactionAnalyzerResult);
+
+            return transactionAnalyzerResult;
         }
     }
 }

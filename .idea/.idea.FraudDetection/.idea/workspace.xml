@@ -6,14 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Concerns/DateUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Interactor/Cards/CardStateManagement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Concernce/Fraud.Concernce.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Concerns/Fraud.Concerns.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/CardAnalyzer/CardAnalyzerInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Cards/CardAnalyzerInteractor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Fraud.Interactor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Fraud.Interactor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Presentation/Services/MessageHandler/MessageHandlerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Presentation/Services/MessageHandler/MessageHandlerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FraudDetection.sln" beforeDir="false" afterPath="$PROJECT_DIR$/FraudDetection.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,11 +66,8 @@
       <option value="$PROJECT_DIR$/Fraud.Interactor/Fraud.Interactor.csproj" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Models/Card.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Transactions/ITransactionAnalyzer.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concernce/Fraud.Concernce.csproj" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Fraud.UseCase.csproj" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/EventRaiser/IEventRaiser.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/EventRaiser/IEventProvider.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/EventProvide/IEventProvider.cs" />
@@ -94,6 +87,9 @@
       <option value="$PROJECT_DIR$/Fraud.Concernce/DateUtils.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concerns/DateUtils.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Cards/CardAnalyzerInteractor.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -175,7 +171,7 @@
       <workItem from="1649044675333" duration="15294000" />
       <workItem from="1649127816156" duration="16740000" />
       <workItem from="1649215213929" duration="18784000" />
-      <workItem from="1649647631214" duration="4979000" />
+      <workItem from="1649647631214" duration="6656000" />
     </task>
     <servers />
   </component>

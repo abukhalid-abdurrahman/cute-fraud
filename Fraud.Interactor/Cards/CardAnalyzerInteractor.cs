@@ -16,13 +16,14 @@ namespace Fraud.Interactor.Cards
         private readonly ITransactionAnalyzer _periodicityAnalyzer;
         private readonly ITransactionAnalyzer _countAnalyzer;
         
-        public CardAnalyzerInteractor(ITransactionRepository transactionRepository)
+        public CardAnalyzerInteractor(ITransactionRepository transactionRepository, 
+            AmountAnalyzer amountAnalyzer, PeriodicityAnalyzer periodicityAnalyzer, CountAnalyzer countAnalyzer)
         {
             _transactionRepository = transactionRepository;
 
-            _amountAnalyzer = new AmountAnalyzer();
-            _periodicityAnalyzer = new PeriodicityAnalyzer();
-            _countAnalyzer = new CountAnalyzer();
+            _amountAnalyzer = amountAnalyzer;
+            _periodicityAnalyzer = periodicityAnalyzer;
+            _countAnalyzer = countAnalyzer;
         }
         
         public async Task AnalyzeCard(Transaction transaction)

@@ -2,6 +2,7 @@
 using System.Linq;
 using Fraud.Entities.DTOs;
 using Fraud.Entities.Models;
+using Fraud.UseCase.Cards;
 using Fraud.UseCase.Transactions;
 
 namespace Fraud.Interactor.Transactions
@@ -9,6 +10,13 @@ namespace Fraud.Interactor.Transactions
     public class CountAnalyzer : ITransactionAnalyzer
     {
         private readonly int _fraudPriorityStep = 30;
+        
+        private readonly ICardStateManagement _cardStateManagement;
+
+        public CountAnalyzer(ICardStateManagement cardStateManagement)
+        {
+            _cardStateManagement = cardStateManagement;
+        }
 
         public TransactionAnalyzerResult AnalyzeTransactions(in Transaction[] transactions)
         {
@@ -38,7 +46,12 @@ namespace Fraud.Interactor.Transactions
                     fraudPriority += _fraudPriorityStep;
             }
 
-            return new TransactionAnalyzerResult(fraudPriority, transactions[0].CardToken);
+            var transactionAnalyzerResult = new TransactionAnalyzerResult(fraudPriority, transactions[0].CardToken);
+
+            // TODO: Remove calling ICardStateManagement.ManageCardState after moving to microservices 
+            _cardStateManagement.ManageCardState(transactionAnalyzerResult);
+
+            return transactionAnalyzerResult;
         }
     }
 }

@@ -17,10 +17,10 @@ namespace Fraud.Presentation.Hosts
         private readonly int _intervalInMillis = 1000 * 60; // 1 minute
         private Timer _timer;
         
-        public PeriodicityAnalyzerHost(ITransactionRepository transactionRepository)
+        public PeriodicityAnalyzerHost(ITransactionRepository transactionRepository, PeriodicityAnalyzer periodicityAnalyzer)
         {
             _transactionRepository = transactionRepository;
-            _transactionAnalyzer = new PeriodicityAnalyzer();
+            _transactionAnalyzer = periodicityAnalyzer;
         }
         
         public Task StartAsync(CancellationToken cancellationToken)
