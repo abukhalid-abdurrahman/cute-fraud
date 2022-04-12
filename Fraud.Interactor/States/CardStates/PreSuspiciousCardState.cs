@@ -15,9 +15,9 @@ namespace Fraud.Interactor.States.CardStates
             Card = card;
         }
         
-        public async Task HandleState()
+        public Task HandleState()
         {
-            throw new System.NotImplementedException();
+            return Task.CompletedTask;
         }
     }
 }
