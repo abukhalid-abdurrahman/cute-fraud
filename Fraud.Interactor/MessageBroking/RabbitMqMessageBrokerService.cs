@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Text;
 using Fraud.Presentation.Configurations;
+using Fraud.UseCase.MessageBroking;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 
-namespace Fraud.Presentation.Services.MessageBroker
+namespace Fraud.Interactor.MessageBroking
 {
     public class RabbitMqMessageBrokerService : IMessageBrokerService
     {

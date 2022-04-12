@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fraud.Presentation.Services.MessageBroker
+namespace Fraud.UseCase.MessageBroking
 {
     public interface IMessageBrokerService : IDisposable
     {

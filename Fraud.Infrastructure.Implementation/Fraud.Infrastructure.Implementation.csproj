@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Fraud.Concerns\Fraud.Concerns.csproj" />
     <ProjectReference Include="..\Fraud.Infrastructure\Fraud.Infrastructure.csproj" />
   </ItemGroup>
 

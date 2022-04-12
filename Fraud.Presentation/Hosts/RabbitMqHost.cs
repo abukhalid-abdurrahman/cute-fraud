@@ -1,8 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Fraud.Presentation.Services;
-using Fraud.Presentation.Services.MessageBroker;
 using Fraud.Presentation.Services.MessageHandler;
+using Fraud.UseCase.MessageBroking;
 using Microsoft.Extensions.Hosting;
 
 namespace Fraud.Presentation.Hosts
