@@ -27,14 +27,17 @@ namespace Fraud.Interactor.Transactions
                 throw new ArgumentNullException(nameof(transactions));
 
             var fraudPriority = 0;
-            
-            var transactionAmountAvg = transactions.Average(x => x.Amount);
+
+            var transactionAmountAvg = transactions
+                .OrderByDescending(x => x.DateCreatedUnix)
+                .Skip(_analyzeIterationsCount)
+                .Average(x => x.Amount);
             var transactionsByAmount = transactions
                 .Where(x => (DateTimeOffset.Now.ToUnixTimeSeconds() - x.DateCreatedUnix) < _intervalInSeconds)
-                .OrderBy(x => x.DateCreatedUnix)
-                .ThenBy(x => x.Amount)
+                .OrderByDescending(x => x.DateCreatedUnix)
+                .ThenByDescending(x => x.Amount)
                 .ToArray();
-
+            
             for (var i = 0; i < _analyzeIterationsCount; i++)
             {
                 if (transactionsByAmount[i]?.Amount > transactionAmountAvg)
