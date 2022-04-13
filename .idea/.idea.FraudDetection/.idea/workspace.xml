@@ -7,7 +7,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/MessageReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/MessageReceiver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Fraud.Interactor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Fraud.Interactor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,9 +74,6 @@
       <option value="$PROJECT_DIR$/Fraud.Entities/Models/Card.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardState.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ITransactionRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ICardRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Cards/CardStateManagement.cs" />
@@ -88,6 +88,9 @@
       <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/RabbitMqMessageBrokerService.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/RabbitMqHost.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/MessageReceiver.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardState.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -172,7 +175,7 @@
       <workItem from="1649647631214" duration="19141000" />
       <workItem from="1649736864821" duration="13178000" />
       <workItem from="1649768074565" duration="380000" />
-      <workItem from="1649822617869" duration="626000" />
+      <workItem from="1649822617869" duration="1948000" />
     </task>
     <servers />
   </component>
