@@ -6,8 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/RabbitMqMessageBrokerService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.UseCase/MessageBroking/IMessageBrokerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/MessageReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/MessageReceiver.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +37,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/DriverIntroductionExample.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository.Neo4J/Neo4JFraudRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Fraud.Infrastructure.Implementation.csproj" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Configurations/Neo4JConfigurations.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JFraudRepository.cs" />
@@ -57,7 +55,6 @@
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/TransactionAnalyzerResult.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardStateManagement.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/EventProvider/LocalEventProvider.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JTransactionRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/CardAnalyzer/CardAnalyzerInteractor.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Services/MessageHandler/MessageHandlerService.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concernce/DateUtils.cs" />
@@ -85,9 +82,12 @@
       <option value="$PROJECT_DIR$/Fraud.UseCase/MessageBroking/IMessageReceiver.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/IMessageNotifier.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/IMessageReceiver.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/MessageReceiver.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/RabbitMqMessageBrokerService.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/MessageBroking/IMessageBrokerService.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Services/MessageNotifier/MessageNotifier.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JTransactionRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/RabbitMqMessageBrokerService.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/RabbitMqHost.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/MessageReceiver.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -170,7 +170,9 @@
       <workItem from="1649127816156" duration="16740000" />
       <workItem from="1649215213929" duration="18784000" />
       <workItem from="1649647631214" duration="19141000" />
-      <workItem from="1649736864821" duration="11231000" />
+      <workItem from="1649736864821" duration="13178000" />
+      <workItem from="1649768074565" duration="380000" />
+      <workItem from="1649822617869" duration="626000" />
     </task>
     <servers />
   </component>
