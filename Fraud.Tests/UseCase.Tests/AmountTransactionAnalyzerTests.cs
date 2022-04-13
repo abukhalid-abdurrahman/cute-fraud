@@ -16,13 +16,20 @@ namespace Fraud.Tests.UseCase.Tests
         private readonly float _highPriorityValue = 45;
         private readonly float _lowPriorityValue = 15;
         
+        private Mock<ICardStateManagement> _cardStateManagement;
+
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
+        {
+            _cardStateManagement = new Mock<ICardStateManagement>();
+            _cardStateManagement
+                .Setup(x => x.ManageCardState(It.IsAny<TransactionAnalyzerResult>()));
+        }
+        
         [Test]
         public void AmountAnalyzer_AnalyzeTransactions_ShouldReturnMinimalPriorityOfFraud()
         {
-            var cardStateManagement = new Mock<ICardStateManagement>();
-            cardStateManagement
-                .Setup(x => x.ManageCardState(It.IsAny<TransactionAnalyzerResult>()));
-            ITransactionAnalyzer transactionAnalyzer = new AmountAnalyzer(cardStateManagement.Object);
+            ITransactionAnalyzer transactionAnalyzer = new AmountAnalyzer(_cardStateManagement.Object);
             var transactionAnalyzerResult = transactionAnalyzer.AnalyzeTransactions(new[]
             {
                 new Transaction()
@@ -64,10 +71,7 @@ namespace Fraud.Tests.UseCase.Tests
         [Test]
         public void AmountAnalyzer_AnalyzeTransactions_ShouldReturnHighPriorityOfFraud()
         {
-            var cardStateManagement = new Mock<ICardStateManagement>();
-            cardStateManagement
-                .Setup(x => x.ManageCardState(It.IsAny<TransactionAnalyzerResult>()));
-            ITransactionAnalyzer transactionAnalyzer = new AmountAnalyzer(cardStateManagement.Object);
+            ITransactionAnalyzer transactionAnalyzer = new AmountAnalyzer(_cardStateManagement.Object);
             var transactionAnalyzerResult = transactionAnalyzer.AnalyzeTransactions(new[]
             {
                 new Transaction()

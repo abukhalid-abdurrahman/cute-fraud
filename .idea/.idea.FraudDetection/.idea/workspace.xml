@@ -6,10 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Tests/Fraud.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Tests/Fraud.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FraudDetection.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/FraudDetection.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +28,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/928D4059-EE31-42D5-83B9-391F138EE6AC/78/DateTimeOffset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/1D/IModelExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Fraud.Concerns/DateUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/16/IConnection.cs" root0="SKIP_HIGHLIGHTING" />
@@ -40,7 +40,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Configurations/Neo4JConfigurations.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JFraudRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IFraudRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Fraud.Infrastructure.csproj" />
@@ -89,8 +88,9 @@
       <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Transactions/ITransactionAnalyzer.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -103,7 +103,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34944612" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34947643" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -177,7 +177,7 @@
       <workItem from="1649647631214" duration="19141000" />
       <workItem from="1649736864821" duration="13178000" />
       <workItem from="1649768074565" duration="380000" />
-      <workItem from="1649822617869" duration="11806000" />
+      <workItem from="1649822617869" duration="15366000" />
     </task>
     <servers />
   </component>
@@ -217,6 +217,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs</url>
+          <line>85</line>
+          <properties documentPath="E:\Faridun's Projects\Alif Bank\fraud-detection\FraudDetection\Fraud.Tests\UseCase.Tests\PeriodicityTransactionAnalyzerTests.cs" initialLine="85" containingFunctionPresentation="method 'PeriodicityAnalyzer_AnalyzeTransactions_ShouldReturnHighFraudPriority'">
+            <startOffsets>
+              <option value="3222" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3305" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs</url>
+          <line>54</line>
+          <properties documentPath="E:\Faridun's Projects\Alif Bank\fraud-detection\FraudDetection\Fraud.Tests\UseCase.Tests\PeriodicityTransactionAnalyzerTests.cs" initialLine="54" containingFunctionPresentation="method 'PeriodicityAnalyzer_AnalyzeTransactions_ShouldReturnMinimalFraudPriority'">
+            <startOffsets>
+              <option value="1941" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2020" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

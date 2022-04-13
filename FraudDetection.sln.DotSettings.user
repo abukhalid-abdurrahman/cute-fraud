@@ -1,7 +1,13 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=07d56dfa_002D682a_002D431c_002Db601_002D25c620eb10df/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="AmountAnalyzer_AnalyzeTransactions_ShouldReturnHighPriorityOfFraud" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=07d56dfa_002D682a_002D431c_002Db601_002D25c620eb10df/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="AmountAnalyzer_AnalyzeTransactions_ShouldReturnHighPriorityOfFraud" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::916BA150-88B8-4611-A2D4-B2F91500B890::net5.0::Fraud.Tests.UseCase.Tests.AmountTransactionAnalyzerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::916BA150-88B8-4611-A2D4-B2F91500B890::net5.0::Fraud.Tests.UseCase.Tests.PeriodicityTransactionAnalyzerTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a20abdb3_002D8595_002D465c_002Da83e_002D88b34e461479/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="PeriodicityTransactionAnalyzerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::916BA150-88B8-4611-A2D4-B2F91500B890::net5.0::Fraud.Tests.UseCase.Tests.PeriodicityTransactionAnalyzerTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
