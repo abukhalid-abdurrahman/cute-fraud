@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
+using Fraud.Concerns.Configurations;
 using Fraud.Entities.Enums;
 using Fraud.Entities.Models;
 using Fraud.Interactor.MessageBroking;
-using Fraud.Presentation.Configurations;
 using Fraud.UseCase.Cards;
 using Fraud.UseCase.MessageBroking;
 using Newtonsoft.Json;

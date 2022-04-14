@@ -1,3 +1,4 @@
+using Fraud.Concerns.Configurations;
 using Fraud.Infrastructure.Implementation.Repository;
 using Fraud.Infrastructure.Repository;
 using Fraud.Interactor.Cards;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace Fraud.App
 {
@@ -25,6 +27,12 @@ namespace Fraud.App
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<Neo4JConfigurations>(Configuration.GetSection("Neo4J"));
+            services.Configure<RabbitMqConfigurations>(Configuration.GetSection("RabbitMQ"));
+            
+            services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<Neo4JConfigurations>>().Value);
+            services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<RabbitMqConfigurations>>().Value);
+            
             services.AddScoped<IMessageBrokerService, RabbitMqMessageBrokerService>();
             services.AddScoped<AmountAnalyzer>();
             services.AddScoped<CountAnalyzer>();

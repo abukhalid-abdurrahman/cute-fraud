@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using Fraud.Presentation.Configurations;
+using Fraud.Concerns.Configurations;
 using Fraud.UseCase.MessageBroking;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;

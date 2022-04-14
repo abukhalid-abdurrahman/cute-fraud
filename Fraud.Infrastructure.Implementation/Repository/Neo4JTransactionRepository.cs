@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Fraud.Concerns.Configurations;
 using Fraud.Entities.Enums;
 using Fraud.Entities.Models;
-using Fraud.Infrastructure.Implementation.Configurations;
 using Fraud.Infrastructure.Repository;
 using Neo4j.Driver;
 

@@ -1,4 +1,4 @@
-﻿namespace Fraud.Infrastructure.Implementation.Configurations
+﻿namespace Fraud.Concerns.Configurations
 {
     public class Neo4JConfigurations
     {
