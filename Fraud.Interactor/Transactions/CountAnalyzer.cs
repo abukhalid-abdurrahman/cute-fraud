@@ -8,9 +8,12 @@ using Fraud.UseCase.Transactions;
 
 namespace Fraud.Interactor.Transactions
 {
+    /// <summary>
+    /// Analyze transactions through average time interval
+    /// </summary>
     public class CountAnalyzer : ITransactionAnalyzer
     {
-        private readonly int _fraudPriorityStep = 30;
+        private readonly int _fraudPriorityStep = 10;
         
         private readonly ICardStateManagement _cardStateManagement;
 

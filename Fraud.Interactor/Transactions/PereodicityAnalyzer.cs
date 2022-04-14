@@ -7,6 +7,9 @@ using Fraud.UseCase.Transactions;
 
 namespace Fraud.Interactor.Transactions
 {
+    /// <summary>
+    /// Analyze transactions through specified time interval
+    /// </summary>
     public class PeriodicityAnalyzer : ITransactionAnalyzer
     {
         private readonly int _fraudPriorityStep = 30;

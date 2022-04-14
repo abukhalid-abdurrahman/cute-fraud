@@ -6,9 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/CountTransactionAnalyzer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FraudDetection.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/FraudDetection.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +41,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JFraudRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IFraudRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Fraud.Infrastructure.csproj" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Models/Transaction.cs" />
@@ -64,8 +64,6 @@
       <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/AmountAnalyzerHost.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/CountAnalyzerHost.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/PeriodicityAnalyzerHost.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/AbstractCardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Models/Card.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardState.cs" />
@@ -91,6 +89,9 @@
       <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" />
       <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" />
       <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/CountTransactionAnalyzer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -177,7 +178,8 @@
       <workItem from="1649647631214" duration="19141000" />
       <workItem from="1649736864821" duration="13178000" />
       <workItem from="1649768074565" duration="380000" />
-      <workItem from="1649822617869" duration="15366000" />
+      <workItem from="1649822617869" duration="18632000" />
+      <workItem from="1649910283313" duration="4657000" />
     </task>
     <servers />
   </component>
@@ -232,14 +234,14 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs</url>
-          <line>54</line>
-          <properties documentPath="E:\Faridun's Projects\Alif Bank\fraud-detection\FraudDetection\Fraud.Tests\UseCase.Tests\PeriodicityTransactionAnalyzerTests.cs" initialLine="54" containingFunctionPresentation="method 'PeriodicityAnalyzer_AnalyzeTransactions_ShouldReturnMinimalFraudPriority'">
+          <url>file://$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs</url>
+          <line>26</line>
+          <properties documentPath="E:\Faridun's Projects\Alif Bank\fraud-detection\FraudDetection\Fraud.Interactor\Transactions\CountAnalyzer.cs" initialLine="26" containingFunctionPresentation="method 'AnalyzeTransactions'">
             <startOffsets>
-              <option value="1941" />
+              <option value="773" />
             </startOffsets>
             <endOffsets>
-              <option value="2020" />
+              <option value="798" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
