@@ -6,11 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/CountTransactionAnalyzer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JCardRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FraudDetection.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/FraudDetection.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.App/Fraud.App.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/Fraud.App.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.App/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ICardRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ICardRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/1D/IModelExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Fraud.Concerns/DateUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/16/IConnection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E02FC919-DD26-4764-80C4-7BFC10EF3027/8b/f5ad245d/ValueExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/1C/IModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B0227-94B1-4CAD-995F-7CD89708E4CF/28/cfa98ee3/ConnectionFactory.cs" root0="SKIP_HIGHLIGHTING" />
@@ -41,8 +42,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IFraudRepository.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Fraud.Infrastructure.csproj" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Models/Transaction.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardAnalyzerUseCase.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Fraud.Interactor.csproj" />
@@ -69,7 +68,6 @@
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ITransactionRepository.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ICardRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Cards/CardStateManagement.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/PreSuspiciousCardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/MessageBroking/IMessageNotifier.cs" />
@@ -92,6 +90,9 @@
       <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" />
       <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/CountTransactionAnalyzer.cs" />
+      <option value="$PROJECT_DIR$/Fraud.App/Startup.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ICardRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JCardRepository.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -179,7 +180,7 @@
       <workItem from="1649736864821" duration="13178000" />
       <workItem from="1649768074565" duration="380000" />
       <workItem from="1649822617869" duration="18632000" />
-      <workItem from="1649910283313" duration="4657000" />
+      <workItem from="1649910283313" duration="9546000" />
     </task>
     <servers />
   </component>
@@ -207,19 +208,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs</url>
-          <line>25</line>
-          <properties documentPath="E:\Faridun's Projects\Alif Bank\fraud-detection\FraudDetection\Fraud.Interactor\Transactions\AmountAnalyzer.cs" initialLine="25" containingFunctionPresentation="method 'AnalyzeTransactions'">
-            <startOffsets>
-              <option value="811" />
-            </startOffsets>
-            <endOffsets>
-              <option value="836" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs</url>
           <line>85</line>

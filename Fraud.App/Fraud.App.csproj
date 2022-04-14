@@ -4,4 +4,11 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Fraud.Infrastructure.Implementation\Fraud.Infrastructure.Implementation.csproj" />
+      <ProjectReference Include="..\Fraud.Interactor\Fraud.Interactor.csproj" />
+      <ProjectReference Include="..\Fraud.Presentation\Fraud.Presentation.csproj" />
+      <ProjectReference Include="..\Fraud.UseCase\Fraud.UseCase.csproj" />
+    </ItemGroup>
+
 </Project>
