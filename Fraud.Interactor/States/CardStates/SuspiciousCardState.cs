@@ -11,20 +11,26 @@ namespace Fraud.Interactor.States.CardStates
 {
     public class SuspiciousCardState : ICardState
     {
+        private readonly IMessageBrokerService _messageBrokerService;
+        private readonly RabbitMqConfigurations _rabbitMqConfigurations;
+        
         public Card Card { get; set; }
         public CardState CardState => CardState.Suspicious;
         
-        public SuspiciousCardState(Card card)
+        public SuspiciousCardState(Card card, IMessageBrokerService messageBrokerService,
+            RabbitMqConfigurations rabbitMqConfigurations)
         {
+            _messageBrokerService = messageBrokerService;
+            _rabbitMqConfigurations = rabbitMqConfigurations;
             Card = card;
         }
         
         public async Task HandleState()
         {
             var cardStateMessage = JsonConvert.SerializeObject(this.Card);
-            // TODO: Change implementation instance to interface instance
-            IMessageBrokerService messageBrokerService = new RabbitMqMessageBrokerService(new RabbitMqConfigurations());
-            messageBrokerService
-                .Send(routingKey: "some-routing-key", exchangeName: "some-ex-name", message: cardStateMessage);        }
+            _messageBrokerService.Send(_rabbitMqConfigurations.SuspensionsCardRoutingKey,
+                _rabbitMqConfigurations.SuspensionsCardExchangeName,
+                cardStateMessage);      
+        }
     }
 }

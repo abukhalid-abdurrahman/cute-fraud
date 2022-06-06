@@ -1,19 +1,25 @@
 ﻿using System.Threading.Tasks;
+using Fraud.Concerns.Configurations;
 using Fraud.Entities.DTOs;
-using Fraud.Entities.Models;
 using Fraud.Infrastructure.Repository;
 using Fraud.Interactor.States.CardStates;
 using Fraud.UseCase.Cards;
+using Fraud.UseCase.MessageBroking;
 
 namespace Fraud.Interactor.Cards
 {
     public class CardStateManagement : ICardStateManagement
     {
         private readonly ICardRepository _cardRepository;
+        private readonly IMessageBrokerService _messageBrokerService;
+        private readonly RabbitMqConfigurations _rabbitMqConfigurations;
 
-        public CardStateManagement(ICardRepository cardRepository)
+        public CardStateManagement(ICardRepository cardRepository, IMessageBrokerService messageBrokerService,
+            RabbitMqConfigurations rabbitMqConfigurations)
         {
             _cardRepository = cardRepository;
+            _messageBrokerService = messageBrokerService;
+            _rabbitMqConfigurations = rabbitMqConfigurations;
         }
 
         public async Task ManageCardState(TransactionAnalyzerResult transactionAnalyzerResult)
@@ -25,9 +31,9 @@ namespace Fraud.Interactor.Cards
             {
                 <= 0 => new DefaultCardState(card),
                 >= 35 and < 70 => new PreSuspiciousCardState(card),
-                >= 70 and < 80 => new SuspiciousCardState(card),
-                >= 80 and < 90 => new TemporaryBlockedCardState(card),
-                >= 90 => new BlockedCardState(card),
+                >= 70 and < 80 => new SuspiciousCardState(card, _messageBrokerService, _rabbitMqConfigurations),
+                >= 80 and < 90 => new TemporaryBlockedCardState(card, _messageBrokerService, _rabbitMqConfigurations),
+                >= 90 => new BlockedCardState(card, _messageBrokerService, _rabbitMqConfigurations),
                 _ => new DefaultCardState(card)
             };
 
