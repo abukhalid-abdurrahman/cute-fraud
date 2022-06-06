@@ -1,9 +1,6 @@
 ﻿namespace Fraud.Concerns.Configurations
 {
-    public class Neo4JConfigurations
+    public class Neo4JConfigurations : CredentialsConfigurationBase
     {
-        public string Uri { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
     }
 }

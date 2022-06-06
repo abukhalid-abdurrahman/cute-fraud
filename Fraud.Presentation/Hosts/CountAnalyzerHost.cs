@@ -14,7 +14,7 @@ namespace Fraud.Presentation.Hosts
         private readonly ITransactionAnalyzer _transactionAnalyzer;
         private readonly ITransactionRepository _transactionRepository;
         
-        private readonly int _intervalInMillis = 1000 * 60; // 1 minute
+        private readonly int _intervalInMillis = TimeSpan.FromMinutes(1).Milliseconds; // 1 minute
         private Timer _timer;
         
         public CountAnalyzerHost(ITransactionRepository transactionRepository, CountAnalyzer countAnalyzer)

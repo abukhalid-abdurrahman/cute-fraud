@@ -42,7 +42,7 @@ namespace Fraud.Interactor.Transactions
                     fraudPriority += _fraudPriorityStep;
             }
 
-            var transactionAnalyzerResult = new TransactionAnalyzerResult(fraudPriority, transactions[0].CardToken);
+            var transactionAnalyzerResult = new TransactionAnalyzerResult(fraudPriority, transactions[0].SenderCardToken);
 
             // TODO: Remove calling ICardStateManagement.ManageCardState after moving to microservices 
             Task.Run(() => _cardStateManagement.ManageCardState(transactionAnalyzerResult));

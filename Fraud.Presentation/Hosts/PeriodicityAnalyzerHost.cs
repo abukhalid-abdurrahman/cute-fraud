@@ -14,7 +14,7 @@ namespace Fraud.Presentation.Hosts
         private readonly ITransactionAnalyzer _transactionAnalyzer;
         private readonly ITransactionRepository _transactionRepository;
         
-        private readonly int _intervalInMillis = 1000 * 60; // 1 minute
+        private readonly int _intervalInMillis = TimeSpan.FromMinutes(1).Milliseconds; // 1 minute
         private Timer _timer;
         
         public PeriodicityAnalyzerHost(ITransactionRepository transactionRepository, PeriodicityAnalyzer periodicityAnalyzer)
@@ -25,7 +25,7 @@ namespace Fraud.Presentation.Hosts
         
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            // Timer will fire 10 seconds af
+            // Timer will fire 10 seconds after start
             _timer = new Timer(DoWork, null, 10000, Timeout.Infinite);
             return Task.CompletedTask;
         }

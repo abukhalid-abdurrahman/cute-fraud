@@ -35,7 +35,7 @@ namespace Fraud.Tests.UseCase.Tests
                 new Transaction()
                 {
                     Amount = 1100,
-                    CardToken = Guid.NewGuid().ToString(),
+                    SenderCardToken = Guid.NewGuid().ToString(),
                     ExternalRef = Guid.NewGuid().ToString(),
                     TransactionState = TransactionState.Default,
                     DateCreatedUnix = DateTimeOffset.Now.AddHours(-3).ToUnixTimeSeconds()
@@ -43,7 +43,7 @@ namespace Fraud.Tests.UseCase.Tests
                 new Transaction()
                 {
                     Amount = 1110,
-                    CardToken = Guid.NewGuid().ToString(),
+                    SenderCardToken = Guid.NewGuid().ToString(),
                     ExternalRef = Guid.NewGuid().ToString(),
                     TransactionState = TransactionState.Default,
                     DateCreatedUnix = DateTimeOffset.Now.AddHours(-5).ToUnixTimeSeconds()
@@ -51,7 +51,7 @@ namespace Fraud.Tests.UseCase.Tests
                 new Transaction()
                 {
                     Amount = 1100,
-                    CardToken = Guid.NewGuid().ToString(),
+                    SenderCardToken = Guid.NewGuid().ToString(),
                     ExternalRef = Guid.NewGuid().ToString(),
                     TransactionState = TransactionState.Default,
                     DateCreatedUnix = DateTimeOffset.Now.AddHours(-1).ToUnixTimeSeconds()
@@ -59,7 +59,7 @@ namespace Fraud.Tests.UseCase.Tests
                 new Transaction()
                 {
                     Amount = 1140,
-                    CardToken = Guid.NewGuid().ToString(),
+                    SenderCardToken = Guid.NewGuid().ToString(),
                     ExternalRef = Guid.NewGuid().ToString(),
                     TransactionState = TransactionState.Default,
                     DateCreatedUnix = DateTimeOffset.Now.AddDays(-1).ToUnixTimeSeconds()
@@ -77,7 +77,7 @@ namespace Fraud.Tests.UseCase.Tests
                 new Transaction()
                 {
                     Amount = 3000,
-                    CardToken = Guid.NewGuid().ToString(),
+                    SenderCardToken = Guid.NewGuid().ToString(),
                     ExternalRef = Guid.NewGuid().ToString(),
                     TransactionState = TransactionState.Default,
                     DateCreatedUnix = DateTimeOffset.Now.AddMinutes(-1).ToUnixTimeSeconds()
@@ -85,7 +85,7 @@ namespace Fraud.Tests.UseCase.Tests
                 new Transaction()
                 {
                     Amount = 1200,
-                    CardToken = Guid.NewGuid().ToString(),
+                    SenderCardToken = Guid.NewGuid().ToString(),
                     ExternalRef = Guid.NewGuid().ToString(),
                     TransactionState = TransactionState.Default,
                     DateCreatedUnix = DateTimeOffset.Now.AddMinutes(-2).ToUnixTimeSeconds()
@@ -93,7 +93,7 @@ namespace Fraud.Tests.UseCase.Tests
                 new Transaction()
                 {
                     Amount = 1260,
-                    CardToken = Guid.NewGuid().ToString(),
+                    SenderCardToken = Guid.NewGuid().ToString(),
                     ExternalRef = Guid.NewGuid().ToString(),
                     TransactionState = TransactionState.Default,
                     DateCreatedUnix = DateTimeOffset.Now.AddMinutes(-3).ToUnixTimeSeconds()
@@ -101,7 +101,7 @@ namespace Fraud.Tests.UseCase.Tests
                 new Transaction()
                 {
                     Amount = 1610,
-                    CardToken = Guid.NewGuid().ToString(),
+                    SenderCardToken = Guid.NewGuid().ToString(),
                     ExternalRef = Guid.NewGuid().ToString(),
                     TransactionState = TransactionState.Default,
                     DateCreatedUnix = DateTimeOffset.Now.AddMinutes(-4).ToUnixTimeSeconds()
@@ -109,7 +109,7 @@ namespace Fraud.Tests.UseCase.Tests
                 new Transaction()
                 {
                     Amount = 550,
-                    CardToken = Guid.NewGuid().ToString(),
+                    SenderCardToken = Guid.NewGuid().ToString(),
                     ExternalRef = Guid.NewGuid().ToString(),
                     TransactionState = TransactionState.Default,
                     DateCreatedUnix = DateTimeOffset.Now.AddMinutes(-5).ToUnixTimeSeconds()

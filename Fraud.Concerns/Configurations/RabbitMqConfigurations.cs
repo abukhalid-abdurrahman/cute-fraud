@@ -1,12 +1,10 @@
 ﻿namespace Fraud.Concerns.Configurations
 {
-    public class RabbitMqConfigurations
+    public class RabbitMqConfigurations : CredentialsConfigurationBase
     {
-        public string HostName { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-
-        public string TransactionQueueName { get; set; }
+        public string CreditQueueName { get; set; }
+        public string DebitQueueName { get; set; }
+        public string P2PQueueName { get; set; }
 
         public string BlockCardExchangeName { get; set; }
         public string TemporaryBlockCardExchangeName { get; set; }

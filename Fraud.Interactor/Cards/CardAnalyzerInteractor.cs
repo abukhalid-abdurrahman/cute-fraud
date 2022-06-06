@@ -35,7 +35,7 @@ namespace Fraud.Interactor.Cards
             await _transactionRepository.Create(transaction);
             
             var dateRangedTransactions = 
-                await _transactionRepository.FindByDateRange(transaction.CardToken, 
+                await _transactionRepository.FindByDateRange(transaction.SenderCardToken, 
                     DateUtils.GetStartDate().AddDays(-5), DateUtils.GetEndOfTheDate());
             
             await Task.Run(() => _amountAnalyzer.AnalyzeTransactions(dateRangedTransactions));

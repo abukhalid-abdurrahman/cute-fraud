@@ -1,6 +1,6 @@
 using System.Text;
 using System.Threading.Tasks;
-using Fraud.Entities.Models;
+using Fraud.Entities.DTOs.Order;
 using Fraud.UseCase.Cards;
 using Newtonsoft.Json;
 
@@ -18,7 +18,7 @@ namespace Fraud.Presentation.Services.MessageHandler
         public async Task HandleMessage(byte[] messageBuffer)
         {
             var transactionContent = Encoding.UTF8.GetString(messageBuffer);
-            var transactionObject = JsonConvert.DeserializeObject<Transaction>(transactionContent);
+            var transactionObject = JsonConvert.DeserializeObject<OrderRequest>(transactionContent);
             await _cardAnalyzerUseCase.AnalyzeCard(transactionObject);
         }
     }

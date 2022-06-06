@@ -75,7 +75,7 @@ namespace Fraud.Interactor.MessageBroking
         {
             var connectionFactory = new ConnectionFactory
             {
-                HostName = _configurations.HostName,
+                HostName = _configurations.Uri,
                 Password = _configurations.Password,
                 UserName = _configurations.UserName
             };

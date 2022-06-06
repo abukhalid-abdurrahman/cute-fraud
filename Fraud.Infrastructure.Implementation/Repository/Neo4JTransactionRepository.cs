@@ -25,7 +25,7 @@ namespace Fraud.Infrastructure.Implementation.Repository
             if (_disposed)
                 throw new ObjectDisposedException(nameof(Neo4JTransactionRepository));
             const string query = @"
-                MERGE (t:transaction { amount: $Amount, external_ref: $ExternalRef, card_token: $CardToken, transaction_state: $TransactionState, date_created_unix: $DateCreatedUnix })
+                MERGE (t:transaction { amount: $Amount, external_ref: $ExternalRef, sender_card_token: $SenderCardToken, receiver_card_token: $ReceiverCardToken, transaction_state: $TransactionState, date_created_unix: $DateCreatedUnix })
                 RETURN t;";
 
             var session = _driver.AsyncSession();
@@ -36,7 +36,8 @@ namespace Fraud.Infrastructure.Implementation.Repository
                     await tx.RunAsync(query, new
                     {
                         entity.Amount,
-                        entity.CardToken,
+                        entity.SenderCardToken,
+                        entity.ReceiverCardToken,
                         entity.ExternalRef,
                         TransactionState = (int) entity.TransactionState,
                         entity.DateCreatedUnix
@@ -56,7 +57,7 @@ namespace Fraud.Infrastructure.Implementation.Repository
             
             const string query = @"
                 MATCH (t:transaction)
-                WHERE t.date_created_unix >= $DateFromUnix AND t.date_created_unix <= $DateToUnix AND t.card_token = $CardToken
+                WHERE t.date_created_unix >= $DateFromUnix AND t.date_created_unix <= $DateToUnix AND t.sender_card_token = $SenderCardToken
                 RETURN t";
 
             var session = _driver.AsyncSession();
@@ -70,8 +71,9 @@ namespace Fraud.Infrastructure.Implementation.Repository
                 });
                 return readResults.Select(x => new Transaction
                 {
-                    Amount = x["t.amount"].As<int>(),
-                    CardToken = x["t.card_token"].As<string>(),
+                    Amount = x["t.amount"].As<uint>(),
+                    SenderCardToken = x["t.sender_card_token"].As<string>(),
+                    ReceiverCardToken = x["t.receiver_card_token"].As<string>(),
                     DateCreatedUnix = x["t.date_created_unix"].As<long>(),
                     ExternalRef = x["t.external_ref"].As<string>(),
                     TransactionState = (TransactionState)x["t.transaction_state"].As<int>()
@@ -90,7 +92,7 @@ namespace Fraud.Infrastructure.Implementation.Repository
             
             const string query = @"
                 MATCH (t:transaction)
-                WHERE t.card_token = $CardToken
+                WHERE t.sender_card_token = $SenderCardToken
                 RETURN t
                 LIMIT $Limit";
 
@@ -104,8 +106,9 @@ namespace Fraud.Infrastructure.Implementation.Repository
                 });
                 return readResults.Select(x => new Transaction
                 {
-                    Amount = x["t.amount"].As<int>(),
-                    CardToken = x["t.card_token"].As<string>(),
+                    Amount = x["t.amount"].As<uint>(),
+                    SenderCardToken = x["t.sender_card_token"].As<string>(),
+                    ReceiverCardToken = x["t.receiver_card_token"].As<string>(),
                     DateCreatedUnix = x["t.date_created_unix"].As<long>(),
                     ExternalRef = x["t.external_ref"].As<string>(),
                     TransactionState = (TransactionState)x["t.transaction_state"].As<int>()

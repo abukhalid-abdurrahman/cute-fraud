@@ -6,17 +6,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Fraud.Concerns/Configurations/CredentialsConfigurationBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/Order/OrderRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/Order/ParticipantOrderRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.App/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.App/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Concerns/Configurations/Neo4JConfigurations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Concerns/Configurations/Neo4JConfigurations.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Concerns/Configurations/RabbitMqConfigurations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Concerns/Configurations/RabbitMqConfigurations.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JCardRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JCardRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Entities/Fraud.Entities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/Fraud.Entities.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Entities/Models/Transaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Transaction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JTransactionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JTransactionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Cards/CardAnalyzerInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Cards/CardAnalyzerInteractor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/RabbitMqMessageBrokerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/RabbitMqMessageBrokerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Presentation/Hosts/AmountAnalyzerHost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Presentation/Hosts/AmountAnalyzerHost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Presentation/Hosts/CountAnalyzerHost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Presentation/Hosts/CountAnalyzerHost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Presentation/Hosts/PeriodicityAnalyzerHost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Presentation/Hosts/PeriodicityAnalyzerHost.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Presentation/Hosts/RabbitMqHost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Presentation/Hosts/RabbitMqHost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Presentation/Services/MessageHandler/MessageHandlerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Presentation/Services/MessageHandler/MessageHandlerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FraudDetection.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/FraudDetection.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +54,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E02FC919-DD26-4764-80C4-7BFC10EF3027/8b/f5ad245d/ValueExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/1C/IModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25288F22-B7C5-48D8-ADF4-CB3C0171568E/74/4522aa5f/ContextUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B0227-94B1-4CAD-995F-7CD89708E4CF/28/cfa98ee3/ConnectionFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/37/EventingBasicConsumer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/928D4059-EE31-42D5-83B9-391F138EE6AC/75/Convert.cs" root0="SKIP_HIGHLIGHTING" />
@@ -49,10 +62,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.Interactor/Fraud.Interactor.csproj" />
-      <option value="$PROJECT_DIR$/Fraud.Concernce/Fraud.Concernce.csproj" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Fraud.UseCase.csproj" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/EventRaiser/IEventRaiser.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/EventRaiser/IEventProvider.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/EventProvide/IEventProvider.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/EventProvider/EventProvider.cs" />
@@ -61,13 +70,9 @@
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardStateManagement.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/EventProvider/LocalEventProvider.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/CardAnalyzer/CardAnalyzerInteractor.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Presentation/Services/MessageHandler/MessageHandlerService.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concernce/DateUtils.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concerns/DateUtils.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Cards/CardAnalyzerInteractor.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/AmountAnalyzerHost.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/CountAnalyzerHost.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/PeriodicityAnalyzerHost.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/AbstractCardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardState.cs" />
@@ -80,7 +85,6 @@
       <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/IMessageReceiver.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/MessageBroking/IMessageBrokerService.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Services/MessageNotifier/MessageNotifier.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JTransactionRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/RabbitMqMessageBrokerService.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/MessageReceiver.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardState.cs" />
@@ -88,7 +92,6 @@
       <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Transactions/ITransactionAnalyzer.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" />
       <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" />
@@ -96,10 +99,20 @@
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ICardRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Models/Card.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JCardRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Tests/Presentation.Tests/MessageHandlerTests.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concerns/Configurations/Neo4JConfigurations.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concerns/Configurations/RabbitMqConfigurations.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/RabbitMqHost.cs" />
+      <option value="$PROJECT_DIR$/Fraud.App/appsettings.json" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/CountAnalyzerHost.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/AmountAnalyzerHost.cs" />
       <option value="$PROJECT_DIR$/Fraud.App/Startup.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/PeriodicityAnalyzerHost.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/RabbitMqHost.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/Order/OrderRequest.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Models/Transaction.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Services/MessageHandler/MessageHandlerService.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JTransactionRepository.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -187,7 +200,12 @@
       <workItem from="1649736864821" duration="13178000" />
       <workItem from="1649768074565" duration="380000" />
       <workItem from="1649822617869" duration="18632000" />
-      <workItem from="1649910283313" duration="11362000" />
+      <workItem from="1649910283313" duration="14291000" />
+      <workItem from="1649998492038" duration="6557000" />
+      <workItem from="1650027332395" duration="426000" />
+      <workItem from="1650603862345" duration="1221000" />
+      <workItem from="1650865364060" duration="203000" />
+      <workItem from="1654501906603" duration="7742000" />
     </task>
     <servers />
   </component>

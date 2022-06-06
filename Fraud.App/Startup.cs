@@ -33,7 +33,7 @@ namespace Fraud.App
             services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<Neo4JConfigurations>>().Value);
             services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<RabbitMqConfigurations>>().Value);
             
-            services.AddScoped<IMessageBrokerService, RabbitMqMessageBrokerService>();
+            services.AddSingleton<IMessageBrokerService, RabbitMqMessageBrokerService>();
             services.AddScoped<AmountAnalyzer>();
             services.AddScoped<CountAnalyzer>();
             services.AddScoped<PeriodicityAnalyzer>();
