@@ -1,4 +1,5 @@
 using Fraud.Concerns.Configurations;
+using Fraud.Infrastructure.Implementation.PostgreSqlRepository;
 using Fraud.Infrastructure.Implementation.Repository;
 using Fraud.Infrastructure.Repository;
 using Fraud.Interactor.Cards;
@@ -21,6 +22,7 @@ namespace Fraud.App
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            DapperConfigurations.Configure();
         }
 
         private IConfiguration Configuration { get; }
@@ -28,9 +30,11 @@ namespace Fraud.App
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<Neo4JConfigurations>(Configuration.GetSection("Neo4J"));
+            services.Configure<PostgreSqlConfigurations>(Configuration.GetSection("PostgreSql"));
             services.Configure<RabbitMqConfigurations>(Configuration.GetSection("RabbitMQ"));
             
             services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<Neo4JConfigurations>>().Value);
+            services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<PostgreSqlConfigurations>>().Value);
             services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<RabbitMqConfigurations>>().Value);
             
             services.AddSingleton<IMessageBrokerService, RabbitMqMessageBrokerService>();

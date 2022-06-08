@@ -6,17 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Enums/ActionType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Enums/EventType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Enums/StateType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Action.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/EventHistory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Events.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Scenario.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Users.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Concerns/Configurations/PostgreSqlConfigurations.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Concerns/Extensions/StringExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/DapperConfigurations.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.App/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.App/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Fraud.Infrastructure.Implementation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Fraud.Infrastructure.Implementation.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +46,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardStateManagement.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/EventProvider/LocalEventProvider.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/CardAnalyzer/CardAnalyzerInteractor.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Concernce/DateUtils.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concerns/DateUtils.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Cards/CardAnalyzerInteractor.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/AbstractCardState.cs" />
@@ -82,10 +74,8 @@
       <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concerns/Configurations/Neo4JConfigurations.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concerns/Configurations/RabbitMqConfigurations.cs" />
-      <option value="$PROJECT_DIR$/Fraud.App/appsettings.json" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/CountAnalyzerHost.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/AmountAnalyzerHost.cs" />
-      <option value="$PROJECT_DIR$/Fraud.App/Startup.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/PeriodicityAnalyzerHost.cs" />
       <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/RabbitMqHost.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/Order/OrderRequest.cs" />
@@ -101,6 +91,12 @@
       <option value="$PROJECT_DIR$/Fraud.Entities/Enums/StateType.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/db.sql" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Models/Action.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Concerns/Configurations/PostgreSqlConfigurations.cs" />
+      <option value="$PROJECT_DIR$/Fraud.App/appsettings.json" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/DapperConfig.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Concerns/Extensions/StringExtensions.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/DapperConfigurations.cs" />
+      <option value="$PROJECT_DIR$/Fraud.App/Startup.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -198,7 +194,7 @@
       <workItem from="1654501906603" duration="9631000" />
       <workItem from="1654575837753" duration="7646000" />
       <workItem from="1654661606046" duration="6621000" />
-      <workItem from="1654675341601" duration="7269000" />
+      <workItem from="1654675341601" duration="8388000" />
     </task>
     <servers />
   </component>
