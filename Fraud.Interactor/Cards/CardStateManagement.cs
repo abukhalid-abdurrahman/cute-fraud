@@ -26,7 +26,7 @@ namespace Fraud.Interactor.Cards
         {
             var card = await _cardRepository
                 .UpdateCardPriority(transactionAnalyzerResult.CardToken, transactionAnalyzerResult.FraudPriority);
-
+ 
             ICardState cardState = card.FraudPriority switch
             {
                 <= 0 => new DefaultCardState(card),
