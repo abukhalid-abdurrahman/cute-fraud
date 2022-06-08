@@ -14,7 +14,7 @@ create table states
     id bigserial not null constraint states_pk primary key,
     user_id bigint not null,
     state_name varchar(64) not null,
-    state_type integer not null,
+    state_code integer not null,
     expiration_time timestamp with time zone,
 
     CONSTRAINT fk_states_users
@@ -26,10 +26,20 @@ create table states
 create table actions
 (
     id bigserial not null constraint actions_pk primary key,
-    state_id bigint not null,
-    action_name varchar(64) not null,
+    action_code integer not null,
+);
 
-    CONSTRAINT fk_actions_states
+-- Actions and States relation. Many-To-Many.
+create table actions_states
+(
+    id bigserial not null constraint actions_pk primary key,
+    action_id bigint not null,
+    state_id bigint not null,
+    
+    CONSTRAINT fk_actions_states_action
+        FOREIGN KEY(action_id)
+            REFERENCES actions(id),
+    CONSTRAINT fk_actions_states_states
         FOREIGN KEY(state_id)
             REFERENCES states(id)
 );
@@ -53,7 +63,7 @@ create table orders
 create table events
 (
     id bigserial not null constraint events_pk primary key,
-    event_name varchar(64) not null
+    event_code integer not null
 );
 
 -- Scenarios table.
@@ -61,7 +71,7 @@ create table scenarios
 (
     id bigserial not null constraint scenarios_pk primary key,
     user_id bigint not null,
-    scenario json not null, 
+    rule json not null, 
 
     CONSTRAINT fk_scenarios_users
         FOREIGN KEY(user_id)
@@ -91,22 +101,12 @@ create table events_history
             REFERENCES events(id)
 );
 
-create table payments_history
-(
-    id bigserial not null constraint payments_history_pk primary key,
-    payment_history_request_id bigint not null,
-    gateway_order_id varchar(64),
-    payment_reference varchar(64),
-    terminal_id varchar(64),
-    merchant_id varchar(64),
-    ref_number varchar(64),
-    stan varchar(64),
-    pan varchar(64),
-    amount numeric,
-    status varchar(64),
-    merchant_name varchar(64),
-    date_created timestamp with time zone,
-    CONSTRAINT fk_payment_history_request
-        FOREIGN KEY(payment_history_request_id)
-            REFERENCES payments_history_requests(id)
-);
+-- Seeds for inserting pre-defined events.
+insert into events (event_code) (0); -- NumberOfOperationsAboveAverageEvent
+insert into events (event_code) (1); -- MinimumOperationIntervalEvent
+insert into events (event_code) (2); -- AmountOfOperationsAboveAverageEvent
+
+-- Seed for inserting pre-defined actions
+insert into actions (action_code) (0); -- TemporaryBlockAction
+insert into actions (action_code) (1); -- BlockAction
+insert into actions (action_code) (2); -- RequestVerification

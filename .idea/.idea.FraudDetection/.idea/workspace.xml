@@ -6,9 +6,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/db.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Enums/ActionType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Enums/EventType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Enums/StateType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Action.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/EventHistory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Events.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Scenario.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Users.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Cards/CardStateManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Cards/CardStateManagement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/db.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +50,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.UseCase/EventProvide/IEventProvider.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/EventProvider/EventProvider.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/EventProvider/IEventProvider.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/TransactionAnalyzerResult.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardStateManagement.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/EventProvider/LocalEventProvider.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/CardAnalyzer/CardAnalyzerInteractor.cs" />
@@ -92,7 +96,11 @@
       <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Cards/CardStateManagement.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Enums/Event.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Enums/EventType.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Enums/StateType.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/db.sql" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Models/Action.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -105,10 +113,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34947643" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -187,7 +197,8 @@
       <workItem from="1650865364060" duration="203000" />
       <workItem from="1654501906603" duration="9631000" />
       <workItem from="1654575837753" duration="7646000" />
-      <workItem from="1654661606046" duration="6387000" />
+      <workItem from="1654661606046" duration="6621000" />
+      <workItem from="1654675341601" duration="7269000" />
     </task>
     <servers />
   </component>
