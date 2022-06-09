@@ -7,7 +7,7 @@ using Fraud.Entities.Models;
 using Fraud.Infrastructure.Repository;
 using Neo4j.Driver;
 
-namespace Fraud.Infrastructure.Implementation.Repository
+namespace Fraud.Infrastructure.Implementation.Neo4JRepository
 {
     public class Neo4JCardRepository : ICardRepository
     {

@@ -1,6 +1,6 @@
 using Fraud.Concerns.Configurations;
+using Fraud.Infrastructure.Implementation.Neo4JRepository;
 using Fraud.Infrastructure.Implementation.PostgreSqlRepository;
-using Fraud.Infrastructure.Implementation.Repository;
 using Fraud.Infrastructure.Repository;
 using Fraud.Interactor.Cards;
 using Fraud.Interactor.MessageBroking;

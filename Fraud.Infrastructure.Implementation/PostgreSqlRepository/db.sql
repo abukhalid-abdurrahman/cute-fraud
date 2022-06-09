@@ -5,7 +5,7 @@ create table users
     user_name varchar(64) not null,
     api_key varchar(64) not null,
     callback varchar(64) not null,
-    date_created timestamp with time zone,
+    date_created timestamp with time zone DEFAULT now(),
 );
 
 -- States table.
@@ -15,7 +15,8 @@ create table states
     user_id bigint not null,
     state_name varchar(64) not null,
     state_code integer not null,
-    expiration_time timestamp with time zone,
+    date_created timestamp with time zone DEFAULT now()
+    expiration_time number,
 
     CONSTRAINT fk_states_users
         FOREIGN KEY(user_id)
@@ -52,7 +53,7 @@ create table orders
     amount numeric,
     source varchar(64),
     destination varchar(64),
-    date_created timestamp with time zone,
+    date_created timestamp with time zone DEFAULT now(),
 
     CONSTRAINT fk_orders_users
         FOREIGN KEY(user_id)
