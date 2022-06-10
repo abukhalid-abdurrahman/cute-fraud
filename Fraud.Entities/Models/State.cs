@@ -9,6 +9,7 @@ namespace Fraud.Entities.Models
         public int UserId { get; set; }
         public StateType StateCode { get; set; }
         public string StateName { get; set; }
+        public DateTimeOffset DateCreated { get; set; } = DateTimeOffset.Now;
         public int ExpirationTime { get; set; }
     }
 }

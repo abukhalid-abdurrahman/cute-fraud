@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
+using Dapper;
 using Fraud.Concerns.Configurations;
 using Fraud.Entities.Models;
 using Fraud.Infrastructure.Repository;
@@ -23,17 +24,30 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
         
         public async Task<IEnumerable<Events>> GetAllEvents()
         {
-            throw new NotImplementedException();
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(EventRepository));
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            const string query = @"SELECT * FROM events;";
+            return await _dbConnection.QueryAsync<Events>(query);
         }
 
         public async Task<IEnumerable<Events>> GetEventById(int eventId)
         {
-            throw new NotImplementedException();
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(EventRepository));
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            const string query = @"SELECT * FROM actions WHERE id = @ActionId;";
+            return await _dbConnection.QueryAsync<Events>(query, new { EventId = eventId });
         }
 
         private void ReleaseUnmanagedResources()
         {
-            // TODO release unmanaged resources here
+            if(_dbConnection.State != ConnectionState.Closed)
+                _dbConnection.Close();
+            _dbConnection.Dispose();
+            _isDisposed = true;
         }
 
         public void Dispose()

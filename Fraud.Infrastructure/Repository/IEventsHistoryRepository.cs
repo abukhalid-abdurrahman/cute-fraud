@@ -9,6 +9,6 @@ namespace Fraud.Infrastructure.Repository
         Task<EventHistory> GetEventHistoryById(int eventHistoryId);
         Task CreateEventHistory(EventHistory eventHistory);
         Task SetEventHistoryOrderState(string orderExternalRef, int stateId);
-        Task SetEventHistoryOrderEvent(string orderExternalRef, int stateId);
+        Task SetEventHistoryOrderEvent(string orderExternalRef, int eventId);
     }
 }

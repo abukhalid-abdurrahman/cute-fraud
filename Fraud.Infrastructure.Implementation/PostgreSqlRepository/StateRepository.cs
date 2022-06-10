@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
+using Dapper;
 using Fraud.Concerns.Configurations;
 using Fraud.Entities.Models;
 using Fraud.Infrastructure.Repository;
@@ -22,37 +24,115 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
         
         public async Task CreateState(State state)
         {
-            throw new NotImplementedException();
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(StateRepository));
+            
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            const string query = @"INSERT INTO states (user_id, state_name, state_code, expiration_time) 
+                                   VALUES (@UserId, @StateName, @StateCode, @ExpirationTime);";
+            await _dbConnection.ExecuteAsync(query, state);
         }
 
-        public async Task<State> GetState(int userId)
+        public async Task<State> GetState(int stateId)
         {
-            throw new NotImplementedException();
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(StateRepository));
+            
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            const string query = @"SELECT * FROM states WHERE id = @StateId;";
+            return await _dbConnection.QueryFirstOrDefaultAsync<State>(query, new
+            {
+                StateId = stateId
+            });
+        }
+
+        public async Task<IEnumerable<State>> GetUserStates(int userId)
+        {
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(StateRepository));
+            
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            const string query = @"SELECT * FROM states WHERE user_id = @UserId;";
+            return await _dbConnection.QueryAsync<State>(query, new
+            {
+                UserId = userId
+            });
         }
 
         public async Task SetStateName(int stateId, string stateName)
         {
-            throw new NotImplementedException();
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(StateRepository));
+            
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            const string query = @"UPDATE states 
+                                   SET state_name = @StateName 
+                                   WHERE id = @StateId;";
+            await _dbConnection.ExecuteAsync(query, new
+            {
+                StateId = stateId,
+                StateName = stateName
+            });
         }
 
         public async Task SetStateCode(int stateId, int stateCode)
         {
-            throw new NotImplementedException();
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(StateRepository));
+            
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            const string query = @"UPDATE states 
+                                   SET state_code = @StateCode 
+                                   WHERE id = @StateId;";
+            await _dbConnection.ExecuteAsync(query, new
+            {
+                StateId = stateId,
+                StateCode = stateCode
+            });
         }
 
         public async Task SetStateExpirationTime(int stateId, int expirationTime)
         {
-            throw new NotImplementedException();
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(StateRepository));
+            
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            const string query = @"UPDATE states 
+                                   SET expiration_time = @ExpirationTime 
+                                   WHERE id = @StateId;";
+            await _dbConnection.ExecuteAsync(query, new
+            {
+                StateId = stateId,
+                ExpirationTime = expirationTime
+            });
         }
 
         public async Task SetStateAction(int stateId, int actionId)
         {
-            throw new NotImplementedException();
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(OrderRepository));
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            const string query = @"INSERT INTO actions_states (action_id, state_id) VALUES (@ActionId, @StateId);";
+            await _dbConnection.ExecuteAsync(query, new
+            {
+                ActionId = actionId,
+                StateId = stateId
+            });
         }
 
         private void ReleaseUnmanagedResources()
         {
-            // TODO release unmanaged resources here
+            if(_dbConnection.State != ConnectionState.Closed)
+                _dbConnection.Close();
+            _dbConnection.Dispose();
+            _isDisposed = true;
         }
 
         public void Dispose()

@@ -6,30 +6,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ActionRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventsHistoryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/OrderRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/StateRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/UsersRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IActionRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IOrderRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IStateRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.App/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Entities/Models/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Order.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Entities/Models/Users.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/Models/Users.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Fraud.Infrastructure.Implementation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Fraud.Infrastructure.Implementation.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JCardRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Neo4JRepository/Neo4JCardRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JTransactionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Neo4JRepository/Neo4JTransactionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ActionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ActionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventsHistoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventsHistoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/StateRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/StateRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IStateRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IStateRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +48,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.Presentation/Services/MessageNotifier/MessageNotifier.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/RabbitMqMessageBrokerService.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/MessageReceiver.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Transactions/ITransactionAnalyzer.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" />
       <option value="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" />
@@ -108,12 +88,17 @@
       <option value="$PROJECT_DIR$/Fraud.Entities/Models/Users.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/UsersRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/db.sql" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IActionRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ActionRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IStateRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/StateRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventsHistoryRepository.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -212,7 +197,8 @@
       <workItem from="1654575837753" duration="7646000" />
       <workItem from="1654661606046" duration="6621000" />
       <workItem from="1654675341601" duration="9470000" />
-      <workItem from="1654755382185" duration="9511000" />
+      <workItem from="1654755382185" duration="14306000" />
+      <workItem from="1654836869931" duration="1342000" />
     </task>
     <servers />
   </component>
