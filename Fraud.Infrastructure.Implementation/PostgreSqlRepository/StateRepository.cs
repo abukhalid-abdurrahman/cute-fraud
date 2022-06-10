@@ -34,6 +34,28 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             await _dbConnection.ExecuteAsync(query, state);
         }
 
+        public async Task CreateState(IEnumerable<State> states)
+        {
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(StateRepository));
+            
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            using var transaction = _dbConnection.BeginTransaction();
+            try
+            {
+                const string query = @"INSERT INTO states (user_id, state_name, state_code, expiration_time) 
+                                   VALUES (@UserId, @StateName, @StateCode, @ExpirationTime);";
+                await _dbConnection.ExecuteAsync(query, states, transaction);
+                transaction.Commit();
+            }
+            catch
+            {
+                transaction.Rollback();
+                throw;
+            }
+        }
+
         public async Task<State> GetState(int stateId)
         {
             if (_isDisposed)
