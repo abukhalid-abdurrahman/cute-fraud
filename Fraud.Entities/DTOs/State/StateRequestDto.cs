@@ -5,6 +5,7 @@ namespace Fraud.Entities.DTOs.State
 {
     public class StateRequestDto
     {
+        public int UserId { get; set; }
         public StateRequestDto PreviousState { get; set; }
         public StateRequestDto[] NextStates { get; set; }
         [Required(ErrorMessage = "Please provide state name!")]
@@ -16,5 +17,7 @@ namespace Fraud.Entities.DTOs.State
         [Required(ErrorMessage = "Please provide state event name!")]
         public EventType EventType { get; set; }
         public int ExpirationTime { get; set; } = 30; // Expiration time in seconds
+        
+        public static implicit operator Models.State(StateRequestDto stateRequestDto) => new(stateRequestDto);
     }
 }

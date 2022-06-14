@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Fraud.Entities.DTOs.Scenario;
 using Fraud.Entities.DTOs.State;
@@ -8,6 +9,21 @@ using Fraud.UseCase.Scenario;
 
 namespace Fraud.Interactor.Scenarios
 {
+    public class StateEdgeDto
+    {
+        public int FromStateId { get; set; }
+        public int ToStateId { get; set; }
+    }
+
+    public class GraphScenarioDto
+    {
+        public List<StateRequestDto> StateVertices { get; set; }
+        public List<StateEdgeDto> StateEdges { get; set; }
+
+        public int StateVerticesCount => StateVertices.Count;
+        public int StateEdgesCount => StateEdges.Count;
+    }
+
     public partial class ScenarioInteractor : IScenarioUseCase
     {
         private readonly IStateRepository _stateRepository;
@@ -24,18 +40,13 @@ namespace Fraud.Interactor.Scenarios
         {
             var statesList = new List<State>();
 
-            StateRequestDto currentStateObj = null;
-            int iter = 0;
-            int objCount = createUserScenarioRequestDto.State.NextStates.Length;
-            do
-            {
-                statesList.Add(new State());
-                currentStateObj = createUserScenarioRequestDto.State.NextStates[iter];
-                iter++;
-                objCount--;
-            } while (currentStateObj == null || objCount > 0);
-
+            // TODO: Get user id, by current login user. From users manager.
+            var userId = 0;
             
+            // TODO: Create current state
+            statesList.Add(createUserScenarioRequestDto.State);
+
+            // TODO: Create states from array
             await _stateRepository.CreateState(statesList);
         }
     }

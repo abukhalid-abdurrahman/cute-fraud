@@ -1,4 +1,5 @@
 using System;
+using Fraud.Entities.DTOs.State;
 using Fraud.Entities.Enums;
 
 namespace Fraud.Entities.Models
@@ -11,5 +12,13 @@ namespace Fraud.Entities.Models
         public string StateName { get; set; }
         public DateTimeOffset DateCreated { get; set; } = DateTimeOffset.Now;
         public int ExpirationTime { get; set; }
+
+        public State(StateRequestDto stateRequestDto)
+        {
+            UserId = stateRequestDto.UserId;
+            StateCode = stateRequestDto.StateType;
+            StateName = stateRequestDto.Name;
+            ExpirationTime = stateRequestDto.ExpirationTime;
+        }
     }
 }
