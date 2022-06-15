@@ -6,8 +6,8 @@ namespace Fraud.Infrastructure.Repository
 {
     public interface IScenarioRepository : IDisposable
     {
-        Task CreateScenario(Scenario scenario);
+        Task<int> CreateScenario(Scenario scenario);
         Task SetScenarioRule(int scenarioId, string scenarioRule);
-        Task<string> GetScenarioRule(int scenarioId, int userId);
+        Task<string> GetScenarioRule(int scenarioId);
     }
 }

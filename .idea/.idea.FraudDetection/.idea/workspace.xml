@@ -6,11 +6,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.UseCase/EventListener/IEventListenerStore.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/GraphScenarioDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/StateEdgeDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateVertexDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateRequestDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Entities/Enums/EventType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/Enums/EventType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Entities/DTOs/Action/ActionTypeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/Action/ActionTypeDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/CreateUserScenarioRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/CreateUserScenarioRequestDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateRequestDto.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateResponseDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Scenarios/CreateUserScenarioInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Scenarios/CreateUserScenarioInteractor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,11 +52,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.Presentation/Services/MessageHandler/MessageHandlerService.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Repository/Neo4JTransactionRepository.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardState.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/Cards/CardStateManagement.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Enums/Event.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Models/Action.cs" />
@@ -69,20 +71,16 @@
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IActionRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ActionRepository.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventsHistoryRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/CreateUserScenarioDto.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/State/CreateStateRequestDto.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateDto.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/Response.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/CreateUserScenarioRequestDto.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Enums/ActionType.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Enums/StateType.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concerns/Extensions/AttributeExtensions.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/Action/ActionTypeDto.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateResponseDto.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Scenario/IScenarioUseCase.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Scenario/ScenarioInteractor.cs" />
@@ -91,11 +89,20 @@
       <option value="$PROJECT_DIR$/Fraud.Interactor/Scenarios/GetUserScenarioInteractor.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IStateRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/StateRepository.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateRequestDto.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/Scenarios/CreateUserScenarioInteractor.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Enums/EventType.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/EventListener/IEventListenerStore.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioStorage.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/Scenarios/CreateUserScenarioInteractor.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateRequestDto.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/Action/ActionTypeDto.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/StateEdgeDto.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateDto.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateVertexDto.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/GraphScenarioDto.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -198,7 +205,8 @@
       <workItem from="1654836869931" duration="15738000" />
       <workItem from="1655095382239" duration="6624000" />
       <workItem from="1655180369297" duration="1955000" />
-      <workItem from="1655197372391" duration="10730000" />
+      <workItem from="1655197372391" duration="11230000" />
+      <workItem from="1655267736100" duration="11236000" />
     </task>
     <servers />
   </component>

@@ -4,6 +4,6 @@ namespace Fraud.Entities.DTOs.Scenario
 {
     public class CreateUserScenarioRequestDto
     {
-        public StateRequestDto State { get; set; }
+        public StateVertexDto StateVertex { get; set; }
     }
 }

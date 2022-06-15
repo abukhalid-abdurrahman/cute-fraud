@@ -6,8 +6,8 @@ namespace Fraud.Entities.DTOs.State
 {
     public class StateResponseDto
     {
-        public StateRequestDto PreviousState { get; set; }
-        public StateRequestDto[] NextStates { get; set; }
+        public StateVertexDto PreviousStateVertex { get; set; }
+        public StateVertexDto[] NextStates { get; set; }
         public string Name { get; set; }
         public string StateTypeName => StateType.GetDescription();
         public StateType StateType { get; set; }

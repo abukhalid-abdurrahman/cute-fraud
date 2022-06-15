@@ -21,7 +21,7 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             _dbConnection = new NpgsqlConnection(postgreSqlConfigurations.ConnectionString);
         }
         
-        public async Task CreateScenario(Scenario scenario)
+        public async Task<int> CreateScenario(Scenario scenario)
         {
             if (_isDisposed)
                 throw new ObjectDisposedException(nameof(ScenarioRepository));
@@ -29,8 +29,8 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             if(_dbConnection.State != ConnectionState.Open)
                 _dbConnection.Open();
             const string query = @"INSERT INTO scenarios (user_id, rule) 
-                                   VALUES (@UserId, CAST(@Rule as json));";
-            await _dbConnection.ExecuteAsync(query, scenario);
+                                   VALUES (@UserId, CAST(@Rule as json)) RETURNING id;";
+            return await _dbConnection.ExecuteScalarAsync<int>(query, scenario);
         }
 
         public async Task SetScenarioRule(int scenarioId, string scenarioRule)
@@ -50,17 +50,16 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             });
         }
 
-        public async Task<string> GetScenarioRule(int scenarioId, int userId)
+        public async Task<string> GetScenarioRule(int scenarioId)
         {
             if (_isDisposed)
                 throw new ObjectDisposedException(nameof(OrderRepository));
             if(_dbConnection.State != ConnectionState.Open)
                 _dbConnection.Open();
-            const string query = @"SELECT * FROM scenarios WHERE user_id = @UserId AND id = @ScenarioId;";
+            const string query = @"SELECT * FROM scenarios WHERE id = @ScenarioId;";
             return await _dbConnection.QueryFirstOrDefaultAsync<string>(query, new
             {
-                ScenarioId = scenarioId,
-                UserId = userId,
+                ScenarioId = scenarioId
             });
         }
 

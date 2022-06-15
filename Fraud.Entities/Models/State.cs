@@ -13,12 +13,12 @@ namespace Fraud.Entities.Models
         public DateTimeOffset DateCreated { get; set; } = DateTimeOffset.Now;
         public int ExpirationTime { get; set; }
 
-        public State(StateRequestDto stateRequestDto)
+        public State(StateVertexDto stateVertexDto)
         {
-            UserId = stateRequestDto.UserId;
-            StateCode = stateRequestDto.StateType;
-            StateName = stateRequestDto.Name;
-            ExpirationTime = stateRequestDto.ExpirationTime;
+            UserId = stateVertexDto.UserId ?? 0;
+            StateCode = stateVertexDto.StateType;
+            StateName = stateVertexDto.Name;
+            ExpirationTime = stateVertexDto.ExpirationTime ?? 30;
         }
     }
 }
