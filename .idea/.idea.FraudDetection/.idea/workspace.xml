@@ -6,19 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/GraphScenarioDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/StateEdgeDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateVertexDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Entities/DTOs/Action/ActionTypeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/Action/ActionTypeDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/CreateUserScenarioRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/Scenario/CreateUserScenarioRequestDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateResponseDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Entities/Models/State.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Scenarios/CreateUserScenarioInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Scenarios/CreateUserScenarioInteractor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +197,7 @@
       <workItem from="1655095382239" duration="6624000" />
       <workItem from="1655180369297" duration="1955000" />
       <workItem from="1655197372391" duration="11230000" />
-      <workItem from="1655267736100" duration="11236000" />
+      <workItem from="1655267736100" duration="12206000" />
     </task>
     <servers />
   </component>

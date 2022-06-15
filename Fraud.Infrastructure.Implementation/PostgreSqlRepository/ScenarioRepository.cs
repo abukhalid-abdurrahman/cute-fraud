@@ -63,6 +63,19 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             });
         }
 
+        public async Task DeleteScenario(int scenarioId)
+        {
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(OrderRepository));
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            const string query = @"DELETE FROM scenarios WHERE id = @ScenarioId;";
+            await _dbConnection.ExecuteAsync(query, new
+            {
+                ScenarioId = scenarioId
+            });
+        }
+
         private void ReleaseUnmanagedResources()
         {
             if(_dbConnection.State != ConnectionState.Closed)

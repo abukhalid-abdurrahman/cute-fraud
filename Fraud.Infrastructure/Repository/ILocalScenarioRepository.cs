@@ -70,6 +70,17 @@ namespace Fraud.Infrastructure.Repository
             return scenarioRuleStr;
         }
 
+        public async Task DeleteScenario(int scenarioId)
+        {            
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(InMemoryScenarioRepository));
+
+            await _scenarioRepository.DeleteScenario(scenarioId);
+
+            if (_scenarioGraphStorage.ContainsKey(scenarioId))
+                _scenarioGraphStorage.TryRemove(scenarioId, out _);
+        }
+
         public async Task<GraphScenarioDto> GetScenarioGraph(int scenarioId)
         {
             if (_isDisposed)
