@@ -6,10 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Fraud.App/Controllers/PreBuiltController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.App/Controllers/ScenarioController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Entities/DTOs/ReturnResult.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +43,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.Interactor/Cards/CardStateManagement.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/Enums/Event.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/Models/Action.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concerns/Configurations/PostgreSqlConfigurations.cs" />
       <option value="$PROJECT_DIR$/Fraud.App/appsettings.json" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/DapperConfig.cs" />
@@ -94,6 +91,9 @@
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.App/Controllers/ScenarioController.cs" />
+      <option value="$PROJECT_DIR$/Fraud.App/Controllers/PreBuiltController.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/ReturnResult.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -197,7 +197,7 @@
       <workItem from="1655095382239" duration="6624000" />
       <workItem from="1655180369297" duration="1955000" />
       <workItem from="1655197372391" duration="11230000" />
-      <workItem from="1655267736100" duration="12206000" />
+      <workItem from="1655267736100" duration="17268000" />
     </task>
     <servers />
   </component>
