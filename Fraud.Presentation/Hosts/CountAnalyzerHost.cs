@@ -11,16 +11,16 @@ namespace Fraud.Presentation.Hosts
 {
     public class CountAnalyzerHost : IHostedService, IDisposable
     {
-        private readonly ITransactionAnalyzer _transactionAnalyzer;
+        private readonly ITransactionAnalyzerUseCase _transactionAnalyzerUseCase;
         private readonly ITransactionRepository _transactionRepository;
         
         private readonly int _intervalInMillis = TimeSpan.FromMinutes(1).Milliseconds; // 1 minute
         private Timer _timer;
         
-        public CountAnalyzerHost(ITransactionRepository transactionRepository, CountAnalyzer countAnalyzer)
+        public CountAnalyzerHost(ITransactionRepository transactionRepository, CountAnalyzerUseCase countAnalyzerUseCase)
         {
             _transactionRepository = transactionRepository;
-            _transactionAnalyzer = countAnalyzer;
+            _transactionAnalyzerUseCase = countAnalyzerUseCase;
         }
         
         public Task StartAsync(CancellationToken cancellationToken)
@@ -45,7 +45,7 @@ namespace Fraud.Presentation.Hosts
                 var dateFrom = DateTimeOffset.Now.Date;
                 var dateTo = DateTimeOffset.Now.AddDays(1).AddHours(23).AddMinutes(0).AddSeconds(0);
                 var transactions = await _transactionRepository.FindByDateRange("", dateFrom, dateTo);
-                _transactionAnalyzer.AnalyzeTransactions(transactions);
+                _transactionAnalyzerUseCase.AnalyzeTransactions(transactions);
             }
             finally
             {

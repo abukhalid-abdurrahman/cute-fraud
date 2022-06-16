@@ -12,18 +12,18 @@ namespace Fraud.Interactor.Cards
     public class CardAnalyzerInteractor : ICardAnalyzerUseCase
     {
         private readonly ITransactionRepository _transactionRepository;
-        private readonly ITransactionAnalyzer _amountAnalyzer;
-        private readonly ITransactionAnalyzer _periodicityAnalyzer;
-        private readonly ITransactionAnalyzer _countAnalyzer;
+        private readonly ITransactionAnalyzerUseCase _amountAnalyzerUseCase;
+        private readonly ITransactionAnalyzerUseCase _periodicityAnalyzerUseCase;
+        private readonly ITransactionAnalyzerUseCase _countAnalyzerUseCase;
         
         public CardAnalyzerInteractor(ITransactionRepository transactionRepository, 
-            AmountAnalyzer amountAnalyzer, PeriodicityAnalyzer periodicityAnalyzer, CountAnalyzer countAnalyzer)
+            AmountAnalyzerUseCase amountAnalyzerUseCase, PeriodicityAnalyzerUseCase periodicityAnalyzerUseCase, CountAnalyzerUseCase countAnalyzerUseCase)
         {
             _transactionRepository = transactionRepository;
 
-            _amountAnalyzer = amountAnalyzer;
-            _periodicityAnalyzer = periodicityAnalyzer;
-            _countAnalyzer = countAnalyzer;
+            _amountAnalyzerUseCase = amountAnalyzerUseCase;
+            _periodicityAnalyzerUseCase = periodicityAnalyzerUseCase;
+            _countAnalyzerUseCase = countAnalyzerUseCase;
         }
         
         public async Task AnalyzeCard(Transaction transaction)
@@ -38,9 +38,9 @@ namespace Fraud.Interactor.Cards
                 await _transactionRepository.FindByDateRange(transaction.SenderCardToken, 
                     DateUtils.GetStartDate().AddDays(-5), DateUtils.GetEndOfTheDate());
             
-            await Task.Run(() => _amountAnalyzer.AnalyzeTransactions(dateRangedTransactions));
-            await Task.Run(() => _periodicityAnalyzer.AnalyzeTransactions(dateRangedTransactions));
-            await Task.Run(() => _countAnalyzer.AnalyzeTransactions(dateRangedTransactions));
+            await Task.Run(() => _amountAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions));
+            await Task.Run(() => _periodicityAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions));
+            await Task.Run(() => _countAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions));
         }
     }
 }

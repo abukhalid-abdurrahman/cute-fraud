@@ -11,16 +11,16 @@ namespace Fraud.Presentation.Hosts
 {
     public class PeriodicityAnalyzerHost : IHostedService, IDisposable
     {
-        private readonly ITransactionAnalyzer _transactionAnalyzer;
+        private readonly ITransactionAnalyzerUseCase _transactionAnalyzerUseCase;
         private readonly ITransactionRepository _transactionRepository;
         
         private readonly int _intervalInMillis = TimeSpan.FromMinutes(1).Milliseconds; // 1 minute
         private Timer _timer;
         
-        public PeriodicityAnalyzerHost(ITransactionRepository transactionRepository, PeriodicityAnalyzer periodicityAnalyzer)
+        public PeriodicityAnalyzerHost(ITransactionRepository transactionRepository, PeriodicityAnalyzerUseCase periodicityAnalyzerUseCase)
         {
             _transactionRepository = transactionRepository;
-            _transactionAnalyzer = periodicityAnalyzer;
+            _transactionAnalyzerUseCase = periodicityAnalyzerUseCase;
         }
         
         public Task StartAsync(CancellationToken cancellationToken)
@@ -45,7 +45,7 @@ namespace Fraud.Presentation.Hosts
                 var dateFrom = DateTimeOffset.Now.Date;
                 var dateTo = DateTimeOffset.Now.AddDays(1).AddHours(23).AddMinutes(0).AddSeconds(0);
                 var transactions = await _transactionRepository.FindByDateRange("", dateFrom, dateTo);
-                _transactionAnalyzer.AnalyzeTransactions(transactions);
+                _transactionAnalyzerUseCase.AnalyzeTransactions(transactions);
             }
             finally
             {

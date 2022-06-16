@@ -7,7 +7,7 @@ using RabbitMQ.Client.Events;
 
 namespace Fraud.Interactor.MessageBroking
 {
-    public class RabbitMqMessageBrokerService : IMessageBrokerService
+    public class RabbitMqMessageBrokerUseCase : IMessageBrokerUseCase
     {
         private readonly RabbitMqConfigurations _configurations;
 
@@ -16,7 +16,7 @@ namespace Fraud.Interactor.MessageBroking
 
         private bool _disposed;
 
-        public RabbitMqMessageBrokerService(RabbitMqConfigurations configurations)
+        public RabbitMqMessageBrokerUseCase(RabbitMqConfigurations configurations)
         {
             _configurations = configurations;
 
@@ -26,7 +26,7 @@ namespace Fraud.Interactor.MessageBroking
         public void Receive(string queueName, Action<byte[]> receiveAction)
         {
             if (_disposed)
-                throw new ObjectDisposedException(nameof(RabbitMqMessageBrokerService));
+                throw new ObjectDisposedException(nameof(RabbitMqMessageBrokerUseCase));
 
             if (receiveAction == null)
                 throw new ArgumentNullException(nameof(receiveAction));
@@ -48,7 +48,7 @@ namespace Fraud.Interactor.MessageBroking
         public void Send(string routingKey, string exchangeName, string message)
         {
             if (_disposed)
-                throw new ObjectDisposedException(nameof(RabbitMqMessageBrokerService));
+                throw new ObjectDisposedException(nameof(RabbitMqMessageBrokerUseCase));
 
             Send(exchangeName, routingKey, Encoding.UTF8.GetBytes(message));
         }
@@ -56,7 +56,7 @@ namespace Fraud.Interactor.MessageBroking
         public void Send(string routingKey, string exchangeName, byte[] bufferMessage)
         {
             if (_disposed)
-                throw new ObjectDisposedException(nameof(RabbitMqMessageBrokerService));
+                throw new ObjectDisposedException(nameof(RabbitMqMessageBrokerUseCase));
 
             var properties = _connectionModel.CreateBasicProperties();
             properties.Persistent = false;
@@ -96,7 +96,7 @@ namespace Fraud.Interactor.MessageBroking
             _disposed = true;
         }
 
-        ~RabbitMqMessageBrokerService()
+        ~RabbitMqMessageBrokerUseCase()
         {
             ReleaseUnmanagedResources();
         }

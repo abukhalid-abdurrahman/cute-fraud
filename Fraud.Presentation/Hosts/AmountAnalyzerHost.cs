@@ -11,16 +11,16 @@ namespace Fraud.Presentation.Hosts
 {
     public class AmountAnalyzerHost : IHostedService, IDisposable
     {
-        private readonly ITransactionAnalyzer _transactionAnalyzer;
+        private readonly ITransactionAnalyzerUseCase _transactionAnalyzerUseCase;
         private readonly ITransactionRepository _transactionRepository;
         
         private readonly int _intervalInMillis = TimeSpan.FromMinutes(1).Milliseconds; // 1 minute
         private Timer _timer;
 
-        public AmountAnalyzerHost(ITransactionRepository transactionRepository, AmountAnalyzer amountAnalyzer)
+        public AmountAnalyzerHost(ITransactionRepository transactionRepository, AmountAnalyzerUseCase amountAnalyzerUseCase)
         {
             _transactionRepository = transactionRepository;
-            _transactionAnalyzer = amountAnalyzer;
+            _transactionAnalyzerUseCase = amountAnalyzerUseCase;
         }
         
         public Task StartAsync(CancellationToken cancellationToken)
@@ -43,7 +43,7 @@ namespace Fraud.Presentation.Hosts
             try
             {
                 var transactions = await _transactionRepository.FindLimit("");
-                _transactionAnalyzer.AnalyzeTransactions(transactions);
+                _transactionAnalyzerUseCase.AnalyzeTransactions(transactions);
             }
             finally
             {

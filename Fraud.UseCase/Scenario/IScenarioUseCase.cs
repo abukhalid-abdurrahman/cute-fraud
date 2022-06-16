@@ -1,12 +1,13 @@
 ﻿using System.Threading.Tasks;
-using Fraud.Entities.DTOs;
+using Fraud.Concerns;
 using Fraud.Entities.DTOs.Scenario;
 
 namespace Fraud.UseCase.Scenario
 {
     public interface IScenarioUseCase
     {
-        Task CreateUserScenario(GraphScenarioDto graphScenarioDto);
-        Task<Response<GetUserScenarioResponseDto>> GetUserScenario(int userId);
+        Task<ReturnResult<bool>> CreateUserScenario(GraphScenarioDto graphScenarioDto);
+        Task<ReturnResult<bool>> DeleteUserScenario();
+        Task<ReturnResult<GraphScenarioDto>> GetUserScenario();
     }
 }

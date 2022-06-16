@@ -9,18 +9,18 @@ using Newtonsoft.Json;
 
 namespace Fraud.Interactor.States.CardStates
 {
-    public class SuspiciousCardState : ICardState
+    public class SuspiciousCardStateUseCase : ICardStateUseCase
     {
-        private readonly IMessageBrokerService _messageBrokerService;
+        private readonly IMessageBrokerUseCase _messageBrokerUseCase;
         private readonly RabbitMqConfigurations _rabbitMqConfigurations;
         
         public Card Card { get; set; }
         public CardState CardState => CardState.Suspicious;
         
-        public SuspiciousCardState(Card card, IMessageBrokerService messageBrokerService,
+        public SuspiciousCardStateUseCase(Card card, IMessageBrokerUseCase messageBrokerUseCase,
             RabbitMqConfigurations rabbitMqConfigurations)
         {
-            _messageBrokerService = messageBrokerService;
+            _messageBrokerUseCase = messageBrokerUseCase;
             _rabbitMqConfigurations = rabbitMqConfigurations;
             Card = card;
         }
@@ -28,7 +28,7 @@ namespace Fraud.Interactor.States.CardStates
         public async Task HandleState()
         {
             var cardStateMessage = JsonConvert.SerializeObject(this.Card);
-            _messageBrokerService.Send(_rabbitMqConfigurations.SuspensionsCardRoutingKey,
+            _messageBrokerUseCase.Send(_rabbitMqConfigurations.SuspensionsCardRoutingKey,
                 _rabbitMqConfigurations.SuspensionsCardExchangeName,
                 cardStateMessage);      
         }

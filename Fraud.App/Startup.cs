@@ -37,12 +37,12 @@ namespace Fraud.App
             services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<PostgreSqlConfigurations>>().Value);
             services.AddSingleton(resolver => resolver.GetRequiredService<IOptions<RabbitMqConfigurations>>().Value);
             
-            services.AddSingleton<IMessageBrokerService, RabbitMqMessageBrokerService>();
-            services.AddScoped<AmountAnalyzer>();
-            services.AddScoped<CountAnalyzer>();
-            services.AddScoped<PeriodicityAnalyzer>();
+            services.AddSingleton<IMessageBrokerUseCase, RabbitMqMessageBrokerUseCase>();
+            services.AddScoped<AmountAnalyzerUseCase>();
+            services.AddScoped<CountAnalyzerUseCase>();
+            services.AddScoped<PeriodicityAnalyzerUseCase>();
             services.AddScoped<ICardAnalyzerUseCase, CardAnalyzerInteractor>();
-            services.AddScoped<ICardStateManagement, CardStateManagement>();
+            services.AddScoped<ICardStateManagementUseCase, CardStateManagementUseCase>();
 
             services.AddScoped<ICardRepository, Neo4JCardRepository>();
             services.AddScoped<ITransactionRepository, Neo4JTransactionRepository>();

@@ -5,16 +5,16 @@ using Fraud.UseCase.Cards;
 
 namespace Fraud.Interactor.States.CardStates
 {
-    public class PreSuspiciousCardState : ICardState
+    public class DefaultCardStateUseCase : ICardStateUseCase
     {
         public Card Card { get; set; }
-        public CardState CardState => CardState.PreSuspicious;
-        
-        public PreSuspiciousCardState(Card card)
+        public CardState CardState => CardState.Default;
+
+        public DefaultCardStateUseCase(Card card)
         {
             Card = card;
         }
-        
+
         public Task HandleState()
         {
             return Task.CompletedTask;

@@ -8,17 +8,17 @@ using Fraud.UseCase.Transactions;
 
 namespace Fraud.Interactor.Transactions
 {
-    public class AmountAnalyzer : ITransactionAnalyzer
+    public class AmountAnalyzerUseCase : ITransactionAnalyzerUseCase
     {
         private readonly int _fraudPriorityStep = 15;
         private readonly int _intervalInSeconds = 12 * 3600; // Six hours
         private readonly int _analyzeIterationsCount = 3;
         
-        private readonly ICardStateManagement _cardStateManagement;
+        private readonly ICardStateManagementUseCase _cardStateManagementUseCase;
 
-        public AmountAnalyzer(ICardStateManagement cardStateManagement)
+        public AmountAnalyzerUseCase(ICardStateManagementUseCase cardStateManagementUseCase)
         {
-            _cardStateManagement = cardStateManagement;
+            _cardStateManagementUseCase = cardStateManagementUseCase;
         }
 
         public TransactionAnalyzerResult AnalyzeTransactions(in Transaction[] transactions)
@@ -47,7 +47,7 @@ namespace Fraud.Interactor.Transactions
             var transactionAnalyzerResult = new TransactionAnalyzerResult(fraudPriority, transactions[0].SenderCardToken);
 
             // TODO: Remove calling ICardStateManagement.ManageCardState after moving to microservices 
-            Task.Run(() => _cardStateManagement.ManageCardState(transactionAnalyzerResult));
+            Task.Run(() => _cardStateManagementUseCase.ManageCardState(transactionAnalyzerResult));
 
             return transactionAnalyzerResult;
         }

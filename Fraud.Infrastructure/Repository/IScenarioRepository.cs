@@ -1,14 +1,15 @@
 using System;
 using System.Threading.Tasks;
+using Fraud.Concerns;
 using Fraud.Entities.Models;
 
 namespace Fraud.Infrastructure.Repository
 {
     public interface IScenarioRepository : IDisposable
     {
-        Task<int> CreateScenario(Scenario scenario);
-        Task SetScenarioRule(int scenarioId, string scenarioRule);
-        Task<string> GetScenarioRule(int scenarioId);
-        Task DeleteScenario(int scenarioId);
+        Task<ReturnResult<int>> CreateScenario(Scenario scenario);
+        Task<ReturnResult<bool>> SetScenarioRule(int scenarioId, string scenarioRule);
+        Task<ReturnResult<string>> GetScenarioRule(int scenarioId);
+        Task<ReturnResult<bool>> DeleteScenario(int scenarioId);
     }
 }

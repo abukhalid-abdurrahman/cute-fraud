@@ -10,16 +10,16 @@ namespace Fraud.Interactor.Transactions
     /// <summary>
     /// Analyze transactions through specified time interval
     /// </summary>
-    public class PeriodicityAnalyzer : ITransactionAnalyzer
+    public class PeriodicityAnalyzerUseCase : ITransactionAnalyzerUseCase
     {
         private readonly int _fraudPriorityStep = 30;
         private readonly int _transactionsIntervalInSeconds = 60;
 
-        private readonly ICardStateManagement _cardStateManagement;
+        private readonly ICardStateManagementUseCase _cardStateManagementUseCase;
 
-        public PeriodicityAnalyzer(ICardStateManagement cardStateManagement)
+        public PeriodicityAnalyzerUseCase(ICardStateManagementUseCase cardStateManagementUseCase)
         {
-            _cardStateManagement = cardStateManagement;
+            _cardStateManagementUseCase = cardStateManagementUseCase;
         }
         
         public TransactionAnalyzerResult AnalyzeTransactions(in Transaction[] transactions)
@@ -45,7 +45,7 @@ namespace Fraud.Interactor.Transactions
             var transactionAnalyzerResult = new TransactionAnalyzerResult(fraudPriority, transactions[0].SenderCardToken);
 
             // TODO: Remove calling ICardStateManagement.ManageCardState after moving to microservices 
-            Task.Run(() => _cardStateManagement.ManageCardState(transactionAnalyzerResult));
+            Task.Run(() => _cardStateManagementUseCase.ManageCardState(transactionAnalyzerResult));
 
             return transactionAnalyzerResult;
         }

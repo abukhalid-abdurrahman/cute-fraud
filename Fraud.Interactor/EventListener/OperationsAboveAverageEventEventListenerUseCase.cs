@@ -4,18 +4,18 @@ using Fraud.UseCase.EventListener;
 
 namespace Fraud.Interactor.EventListener
 {
-    public sealed class AmountAboveAverageEventListener : IEventListener
+    public sealed class OperationsAboveAverageEventEventListenerUseCase : IEventListenerUseCase
     {
         private static readonly object Locker = new object();
-        private static AmountAboveAverageEventListener _instance = null;
-        public static IEventListener GetInstance()
+        private static OperationsAboveAverageEventEventListenerUseCase _instance = null;
+        public static IEventListenerUseCase GetInstance()
         {
             lock (Locker)
             {
-                return _instance ??= new AmountAboveAverageEventListener();
+                return _instance ??= new OperationsAboveAverageEventEventListenerUseCase();
             }
         }
-        
+
         public async Task HandleEvent(Order orderEntity)
         {
             throw new System.NotImplementedException();

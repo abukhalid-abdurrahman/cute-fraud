@@ -10,22 +10,22 @@ namespace Fraud.Presentation.Hosts
 {
     public class RabbitMqHost : IHostedService, IDisposable
     {
-        private readonly IMessageBrokerService _messageBrokerService;
+        private readonly IMessageBrokerUseCase _messageBrokerUseCase;
         private readonly IMessageHandlerService _messageHandlerService;
         private readonly RabbitMqConfigurations _rabbitMqConfigurations;
 
         private Timer _timer;
 
-        public RabbitMqHost(IMessageBrokerService messageBrokerService, IMessageHandlerService messageHandlerService, RabbitMqConfigurations rabbitMqConfigurations)
+        public RabbitMqHost(IMessageBrokerUseCase messageBrokerUseCase, IMessageHandlerService messageHandlerService, RabbitMqConfigurations rabbitMqConfigurations)
         {
-            _messageBrokerService = messageBrokerService;
+            _messageBrokerUseCase = messageBrokerUseCase;
             _messageHandlerService = messageHandlerService;
             _rabbitMqConfigurations = rabbitMqConfigurations;
         }
         
         private void DoWork(object state)
         {
-            _messageBrokerService.Receive(
+            _messageBrokerUseCase.Receive(
                     queueName: _rabbitMqConfigurations.P2PQueueName, 
                     receiveAction: buffer => _messageHandlerService.HandleMessage(buffer));
         }  
@@ -45,7 +45,7 @@ namespace Fraud.Presentation.Hosts
 
         public void Dispose()
         {
-            _messageBrokerService.Dispose();
+            _messageBrokerUseCase.Dispose();
             _timer?.Dispose();
         }
     }

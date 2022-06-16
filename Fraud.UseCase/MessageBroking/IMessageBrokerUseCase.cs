@@ -2,7 +2,7 @@
 
 namespace Fraud.UseCase.MessageBroking
 {
-    public interface IMessageBrokerService : IDisposable
+    public interface IMessageBrokerUseCase : IDisposable
     {
         public void Send(string routingKey, string exchangeName, byte[] bufferMessage);
         public void Send(string routingKey, string exchangeName, string message);

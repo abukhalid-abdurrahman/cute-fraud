@@ -4,15 +4,15 @@ using Fraud.UseCase.EventListener;
 
 namespace Fraud.Interactor.EventListener
 {
-    public sealed class MinimumIntervalEventEventListener : IEventListener
+    public sealed class MinimumIntervalEventEventListenerUseCase : IEventListenerUseCase
     {
         private static readonly object Locker = new object();
-        private static MinimumIntervalEventEventListener _instance = null;
-        public static IEventListener GetInstance()
+        private static MinimumIntervalEventEventListenerUseCase _instance = null;
+        public static IEventListenerUseCase GetInstance()
         {
             lock (Locker)
             {
-                return _instance ??= new MinimumIntervalEventEventListener();
+                return _instance ??= new MinimumIntervalEventEventListenerUseCase();
             }
         }
 
