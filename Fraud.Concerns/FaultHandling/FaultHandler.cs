@@ -80,7 +80,7 @@ namespace Fraud.Concerns.FaultHandling
             var warningMessage = string.Format(errorMessageTemplate, message, detailedMessage);
 
             // Setup ReturnResult instance
-            returnResult.IsSuccessfully = false;
+            returnResult.IsSuccessfully = true;
             returnResult.Message = message;
             returnResult.DetailedMessage = detailedMessage;
 

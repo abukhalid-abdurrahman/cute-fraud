@@ -9,6 +9,6 @@ namespace Fraud.Infrastructure.Repository
     public interface IActionRepository : IDisposable
     {
         Task<ReturnResult<IEnumerable<Action>>> GetAllActions();
-        Task<ReturnResult<IEnumerable<Action>>> GetActionById(int actionId);
+        Task<ReturnResult<Action>> GetActionById(int actionId);
     }
 }

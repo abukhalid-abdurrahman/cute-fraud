@@ -6,43 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/InMemoryScenarioRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.App/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.App/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Concerns/FaultHandling/FaultHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Concerns/FaultHandling/FaultHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ActionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ActionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IActionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IActionRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ICardRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ICardRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IOrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IOrderRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IStateRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IStateRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ITransactionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ITransactionRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Cards/CardAnalyzerInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Cards/CardAnalyzerInteractor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Cards/CardStateManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Cards/CardStateManagement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/RabbitMqMessageBrokerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/MessageBroking/RabbitMqMessageBrokerUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzerUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/CountAnalyzerUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/PereodicityAnalyzer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Presentation/Hosts/AmountAnalyzerHost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Presentation/Hosts/AmountAnalyzerHost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Presentation/Hosts/CountAnalyzerHost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Presentation/Hosts/CountAnalyzerHost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Presentation/Hosts/PeriodicityAnalyzerHost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Presentation/Hosts/PeriodicityAnalyzerHost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Presentation/Hosts/RabbitMqHost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Presentation/Hosts/RabbitMqHost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/AmountTransactionAnalyzerTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/CountTransactionAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/CountTransactionAnalyzer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Tests/UseCase.Tests/PeriodicityTransactionAnalyzerTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardAnalyzerUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardAnalyzerUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardStateManagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardStateManagement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.UseCase/EventListener/IEventListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.UseCase/EventListener/IEventListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.UseCase/EventListener/IEventListenerStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.UseCase/EventListener/IEventListenerStore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.UseCase/MessageBroking/IMessageBrokerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.UseCase/MessageBroking/IMessageBrokerUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.UseCase/Scenario/IScenarioUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.UseCase/Scenario/IScenarioUseCase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.UseCase/Transactions/ITransactionAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.UseCase/Transactions/ITransactionAnalyzerUseCase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +36,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/16/IConnection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E02FC919-DD26-4764-80C4-7BFC10EF3027/8b/f5ad245d/ValueExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/1C/IModel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardStateUseCase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25288F22-B7C5-48D8-ADF4-CB3C0171568E/74/4522aa5f/ContextUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B0227-94B1-4CAD-995F-7CD89708E4CF/28/cfa98ee3/ConnectionFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/37/EventingBasicConsumer.cs" root0="SKIP_HIGHLIGHTING" />
@@ -76,14 +45,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.Entities/Enums/ActionType.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/Enums/StateType.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Concerns/Extensions/AttributeExtensions.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateResponseDto.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Scenario/ScenarioInteractor.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Scenario/GetUserScenarioInteractor.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Scenario/CreateUserScenarioInteractor.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/Scenarios/GetUserScenarioInteractor.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/Enums/EventType.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioStorage.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/State/StateRequestDto.cs" />
@@ -107,7 +68,6 @@
       <option value="$PROJECT_DIR$/Fraud.Concerns/FaultHandling/ErrorHandler.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/ReturnResult.cs" />
       <option value="$PROJECT_DIR$/Fraud.Concerns/ReturnResult.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Concerns/FaultHandling/FaultHandler.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Transactions/ITransactionAnalyzerUseCase.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/MessageBroking/IMessageBrokerUseCase.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Scenario/IScenarioUseCase.cs" />
@@ -115,10 +75,7 @@
       <option value="$PROJECT_DIR$/Fraud.UseCase/EventListener/IEventListenerStore.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardAnalyzerUseCase.cs" />
       <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardState.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardStateManagement.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IActionRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ICardRepository.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/InMemoryScenarioRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" />
@@ -127,6 +84,18 @@
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IStateRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ITransactionRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IUserRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardStateUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardStateManagement.cs" />
+      <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardStateManagementUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.UseCase/EventListener/IEventListenerUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.UseCase/EventListener/IEventListenerStoreUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Fraud.Presentation.csproj" />
+      <option value="$PROJECT_DIR$/Fraud.Presentation/Hosts/RabbitMqHost.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IActionRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Concerns/FaultHandling/FaultHandler.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ActionRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventRepository.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -231,7 +200,7 @@
       <workItem from="1655180369297" duration="1955000" />
       <workItem from="1655197372391" duration="11230000" />
       <workItem from="1655267736100" duration="17966000" />
-      <workItem from="1655354175611" duration="19054000" />
+      <workItem from="1655354175611" duration="21408000" />
     </task>
     <servers />
   </component>
@@ -264,10 +233,10 @@
           <line>85</line>
           <properties documentPath="E:\Faridun's Projects\Alif Bank\fraud-detection\FraudDetection\Fraud.Tests\UseCase.Tests\PeriodicityTransactionAnalyzerTests.cs" initialLine="85" containingFunctionPresentation="method 'PeriodicityAnalyzer_AnalyzeTransactions_ShouldReturnHighFraudPriority'">
             <startOffsets>
-              <option value="3278" />
+              <option value="3292" />
             </startOffsets>
             <endOffsets>
-              <option value="3361" />
+              <option value="3375" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />

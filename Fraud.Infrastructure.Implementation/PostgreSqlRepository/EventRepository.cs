@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 using Dapper;
+using Fraud.Concerns;
 using Fraud.Concerns.Configurations;
+using Fraud.Concerns.FaultHandling;
 using Fraud.Entities.Models;
 using Fraud.Infrastructure.Repository;
 using Npgsql;
@@ -22,24 +24,42 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             _dbConnection = new NpgsqlConnection(postgreSqlConfigurations.ConnectionString);
         }
         
-        public async Task<IEnumerable<Events>> GetAllEvents()
+        public async Task<ReturnResult<IEnumerable<Events>>> GetAllEvents()
         {
             if (_isDisposed)
                 throw new ObjectDisposedException(nameof(EventRepository));
             if(_dbConnection.State != ConnectionState.Open)
                 _dbConnection.Open();
+            
+            var result = new ReturnResult<IEnumerable<Events>>();
+            
             const string query = @"SELECT * FROM events;";
-            return await _dbConnection.QueryAsync<Events>(query);
+            var allEvents =  await _dbConnection.QueryAsync<Events>(query);
+            if(allEvents == null)
+                FaultHandler.HandleWarning(ref result, "Events list are empty!", "Pre-built event list are not exist!");
+            else
+                return ReturnResult<IEnumerable<Events>>.SuccessResult(allEvents);
+
+            return result;
         }
 
-        public async Task<IEnumerable<Events>> GetEventById(int eventId)
+        public async Task<ReturnResult<Events>> GetEventById(int eventId)
         {
             if (_isDisposed)
                 throw new ObjectDisposedException(nameof(EventRepository));
             if(_dbConnection.State != ConnectionState.Open)
                 _dbConnection.Open();
-            const string query = @"SELECT * FROM actions WHERE id = @ActionId;";
-            return await _dbConnection.QueryAsync<Events>(query, new { EventId = eventId });
+
+            var result = new ReturnResult<Events>();
+            
+            const string query = @"SELECT * FROM events WHERE id = @EventId;";
+            var eventEntity = await _dbConnection.QueryFirstOrDefaultAsync<Events>(query, new { EventId = eventId });
+            if(eventEntity == null)
+                FaultHandler.HandleWarning(ref result, "Entity not found!", $"Pre-built entity with id {eventId} not found!");
+            else
+                return ReturnResult<Events>.SuccessResult(eventEntity);
+
+            return result;
         }
 
         private void ReleaseUnmanagedResources()
