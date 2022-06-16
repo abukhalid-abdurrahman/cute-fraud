@@ -1,36 +1,43 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Fraud.Entities.DTOs.Scenario;
 using Fraud.Entities.Models;
 using Fraud.Infrastructure.Repository;
 using Fraud.UseCase.Scenario;
+using Newtonsoft.Json;
 
 namespace Fraud.Interactor.Scenarios
 {
     public partial class ScenarioInteractor : IScenarioUseCase
     {
         private readonly IStateRepository _stateRepository;
-        private readonly IScenarioRepository _scenarioRepository;
+        private readonly ILocalScenarioRepository _localScenarioRepository;
 
         public ScenarioInteractor(IStateRepository stateRepository, 
-            IScenarioRepository scenarioRepository)
+            ILocalScenarioRepository localScenarioRepository)
         {
             _stateRepository = stateRepository;
-            _scenarioRepository = scenarioRepository;
+            _localScenarioRepository = localScenarioRepository;
         }
         
-        public async Task CreateUserScenario(CreateUserScenarioRequestDto createUserScenarioRequestDto)
+        public async Task CreateUserScenario(GraphScenarioDto graphScenarioDto)
         {
-            var statesList = new List<State>();
-
-            // TODO: Get user id, by current login user. From users manager.
-            var userId = 0;
+            foreach (var stateVertexDto in graphScenarioDto.StateVertices)
+            {
+                stateVertexDto.UserId = 0;
+                stateVertexDto.StateId = await _stateRepository.CreateState(stateVertexDto);
+                foreach (var stateAction in stateVertexDto.ActionTypes)
+                {
+                    await _stateRepository.SetStateAction(stateVertexDto.StateId.Value, stateAction.ActionId);
+                }
+            }
             
-            // TODO: Create current state
-            statesList.Add(createUserScenarioRequestDto.StateVertex);
-
-            // TODO: Create states from array
-            await _stateRepository.CreateState(statesList);
+            var graphScenarioRuleContent = JsonConvert.SerializeObject(graphScenarioDto);
+            var scenarioEntity = new Scenario()
+            {
+                UserId = 0,
+                Rule = graphScenarioRuleContent
+            };
+            await _localScenarioRepository.CreateScenario(scenarioEntity);
         }
     }
 }

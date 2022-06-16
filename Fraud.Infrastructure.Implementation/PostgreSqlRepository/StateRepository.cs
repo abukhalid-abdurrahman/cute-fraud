@@ -22,7 +22,7 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             _dbConnection = new NpgsqlConnection(postgreSqlConfigurations.ConnectionString);
         }
         
-        public async Task CreateState(State state)
+        public async Task<int> CreateState(State state)
         {
             if (_isDisposed)
                 throw new ObjectDisposedException(nameof(StateRepository));
@@ -30,8 +30,8 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             if(_dbConnection.State != ConnectionState.Open)
                 _dbConnection.Open();
             const string query = @"INSERT INTO states (user_id, state_name, state_code, expiration_time) 
-                                   VALUES (@UserId, @StateName, @StateCode, @ExpirationTime);";
-            await _dbConnection.ExecuteAsync(query, state);
+                                   VALUES (@UserId, @StateName, @StateCode, @ExpirationTime) RETURNING id;";
+            return await _dbConnection.ExecuteScalarAsync<int>(query, state);
         }
 
         public async Task CreateState(IEnumerable<State> states)

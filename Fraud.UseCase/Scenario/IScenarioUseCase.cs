@@ -6,7 +6,7 @@ namespace Fraud.UseCase.Scenario
 {
     public interface IScenarioUseCase
     {
-        Task CreateUserScenario(CreateUserScenarioRequestDto createUserScenarioRequestDto);
+        Task CreateUserScenario(GraphScenarioDto graphScenarioDto);
         Task<Response<GetUserScenarioResponseDto>> GetUserScenario(int userId);
     }
 }

@@ -7,7 +7,7 @@ namespace Fraud.Infrastructure.Repository
 {
     public interface IStateRepository : IDisposable
     {
-        Task CreateState(State state);
+        Task<int> CreateState(State state);
         Task CreateState(IEnumerable<State> states);
         Task<State> GetState(int stateId);
         Task<IEnumerable<State>> GetUserStates(int userId);
