@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Fraud.Entities.DTOs
+namespace Fraud.Concerns
 {
-    public class ReturnResult<T>
+    public struct ReturnResult<T>
     {
         public T Result { get; set; }
         public bool IsSuccessfully { get; set; }
