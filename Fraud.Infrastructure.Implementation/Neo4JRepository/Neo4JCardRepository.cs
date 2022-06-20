@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Fraud.Concerns;
 using Fraud.Concerns.Configurations;
+using Fraud.Concerns.FaultHandling;
 using Fraud.Entities.Enums;
 using Fraud.Entities.Models;
 using Fraud.Infrastructure.Repository;
@@ -20,7 +22,7 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                 AuthTokens.Basic(neo4JConfigurations.UserName, neo4JConfigurations.Password));
         }
         
-        public async Task<Card> UpdateCardPriority(string cardToken, float fraudPriority)
+        public async Task<ReturnResult<Card>> UpdateCardPriority(string cardToken, float fraudPriority)
         {
             if (_disposed)
                 throw new ObjectDisposedException(nameof(Neo4JTransactionRepository));
@@ -31,6 +33,9 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                 RETURN c;";
 
             var session = _driver.AsyncSession();
+            var returnResult = new ReturnResult<Card>();
+            var errorMessageTemplate = "Error was occurred while inserting card node in method UpdateCardPriority! Reason: {0}, {1}";
+
             try
             {
                 var writeResults = await session.WriteTransactionAsync(async tx =>
@@ -42,17 +47,26 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                     });
                     return await result.ToListAsync();
                 });
-                return writeResults.Select(x => new Card
+                var card = writeResults.Select(x => new Card
                 {
                     CardToken = x["c.card_token"].As<string>(),
                     FraudPriority = x["c.card_token"].As<double>(),
                     CardState = CardState.Default
                 }).FirstOrDefault();
+                
+                returnResult.Result = card;
+                returnResult.IsSuccessfully = true;
+            }
+            catch (Exception e)
+            {
+                FaultHandler.HandleError(ref returnResult, e, "Card node merging failed!", string.Format(errorMessageTemplate, e.Message, e.StackTrace));
             }
             finally
             {
                 await session.CloseAsync();
             }
+
+            return returnResult;
         }
 
         private void ReleaseUnmanagedResources()

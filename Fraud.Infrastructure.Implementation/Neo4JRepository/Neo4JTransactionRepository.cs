@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Fraud.Concerns;
 using Fraud.Concerns.Configurations;
+using Fraud.Concerns.FaultHandling;
 using Fraud.Entities.Enums;
 using Fraud.Entities.Models;
 using Fraud.Infrastructure.Repository;
@@ -20,7 +22,7 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                 AuthTokens.Basic(neo4JConfigurations.UserName, neo4JConfigurations.Password));
         }
 
-        public async Task Create(Transaction entity)
+        public async Task<ReturnResult<bool>> Create(Transaction entity)
         {
             if (_disposed)
                 throw new ObjectDisposedException(nameof(Neo4JTransactionRepository));
@@ -29,6 +31,9 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                 RETURN t;";
 
             var session = _driver.AsyncSession();
+            
+            var returnResult = new ReturnResult<bool>();
+            var errorMessageTemplate = "Error was occurred while inserting transaction node in method Create! Reason: {0}, {1}";
             try
             {
                 await session.WriteTransactionAsync(async tx =>
@@ -43,14 +48,22 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                         entity.DateCreatedUnix
                     });
                 });
+                
+                returnResult.IsSuccessfully = true;
+                returnResult.Result = true;
+            }
+            catch (Exception e)
+            {
+                FaultHandler.HandleError(ref returnResult, e, "Transactions node creating failed!", string.Format(errorMessageTemplate, e.Message, e.StackTrace));
             }
             finally
             {
                 await session.CloseAsync();
             }
+            return returnResult;
         }
 
-        public async Task<Transaction[]> FindByDateRange(string cardToken, DateTimeOffset dateFrom, DateTimeOffset dateTo)
+        public async Task<ReturnResult<Transaction[]>> FindByDateRange(string cardToken, DateTimeOffset dateFrom, DateTimeOffset dateTo)
         {
             if (_disposed)
                 throw new ObjectDisposedException(nameof(Neo4JTransactionRepository));
@@ -61,6 +74,10 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                 RETURN t";
 
             var session = _driver.AsyncSession();
+            
+            var returnResult = new ReturnResult<Transaction[]>();
+            var errorMessageTemplate = "Error was occurred while fetching transactions in method FindByDateRange! Reason: {0}, {1}";
+            
             try
             {
                 var readResults = await session.ReadTransactionAsync(async tx =>
@@ -69,7 +86,7 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                         new { DateFromUnix = dateFrom.ToUnixTimeSeconds(), DateToUnix = dateTo.ToUnixTimeSeconds(), CardToken = cardToken });
                     return await result.ToListAsync();
                 });
-                return readResults.Select(x => new Transaction
+                var transactionsByDateRange = readResults.Select(x => new Transaction
                 {
                     Amount = x["t.amount"].As<uint>(),
                     SenderCardToken = x["t.sender_card_token"].As<string>(),
@@ -78,14 +95,23 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                     ExternalRef = x["t.external_ref"].As<string>(),
                     TransactionState = (TransactionState)x["t.transaction_state"].As<int>()
                 }).ToArray();
+
+                returnResult.IsSuccessfully = true;
+                returnResult.Result = transactionsByDateRange;
+            }
+            catch (Exception e)
+            {
+                FaultHandler.HandleError(ref returnResult, e, "Transactions node fetching failed!", string.Format(errorMessageTemplate, e.Message, e.StackTrace));
             }
             finally
             {
                 await session.CloseAsync();
             }
+
+            return returnResult;
         }
 
-        public async Task<Transaction[]> FindLimit(string cardToken, int limit = 100)
+        public async Task<ReturnResult<Transaction[]>> FindLimit(string cardToken, int limit = 100)
         {
             if (_disposed)
                 throw new ObjectDisposedException(nameof(Neo4JTransactionRepository));
@@ -97,6 +123,9 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                 LIMIT $Limit";
 
             var session = _driver.AsyncSession();
+            
+            var returnResult = new ReturnResult<Transaction[]>();
+            var errorMessageTemplate = "Error was occurred while fetching transactions in method FindLimit! Reason: {0}, {1}";
             try
             {
                 var readResults = await session.ReadTransactionAsync(async tx =>
@@ -104,7 +133,7 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                     var result = await tx.RunAsync(query, new { Limit = limit, CardToken = cardToken });
                     return await result.ToListAsync();
                 });
-                return readResults.Select(x => new Transaction
+                var transactionByCardToken = readResults.Select(x => new Transaction
                 {
                     Amount = x["t.amount"].As<uint>(),
                     SenderCardToken = x["t.sender_card_token"].As<string>(),
@@ -113,11 +142,19 @@ namespace Fraud.Infrastructure.Implementation.Neo4JRepository
                     ExternalRef = x["t.external_ref"].As<string>(),
                     TransactionState = (TransactionState)x["t.transaction_state"].As<int>()
                 }).ToArray();
+                
+                returnResult.IsSuccessfully = true;
+                returnResult.Result = transactionByCardToken;
+            }
+            catch (Exception e)
+            {
+                FaultHandler.HandleError(ref returnResult, e, "Transactions node fetching failed!", string.Format(errorMessageTemplate, e.Message, e.StackTrace));
             }
             finally
             {
                 await session.CloseAsync();
             }        
+            return returnResult;
         }
 
         private void ReleaseUnmanagedResources()
