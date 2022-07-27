@@ -26,7 +26,7 @@ namespace Fraud.Interactor.Cards
             _countAnalyzerUseCase = countAnalyzerUseCase;
         }
         
-        public async Task AnalyzeCard(Transaction transaction)
+        public async Task<ReturnResult<bool>> AnalyzeCard(Transaction transaction)
         {
             if (transaction == null)
                 throw new ArgumentNullException(nameof(transaction));
@@ -38,9 +38,10 @@ namespace Fraud.Interactor.Cards
                 await _transactionRepository.FindByDateRange(transaction.SenderCardToken, 
                     DateUtils.GetStartDate().AddDays(-5), DateUtils.GetEndOfTheDate());
             
-            await Task.Run(() => _amountAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions));
-            await Task.Run(() => _periodicityAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions));
-            await Task.Run(() => _countAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions));
+            await Task.Run(() => _amountAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions.Result));
+            await Task.Run(() => _periodicityAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions.Result));
+            await Task.Run(() => _countAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions.Result));
+            return ReturnResult<bool>.SuccessResult();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Fraud.Concerns;
 using Fraud.Entities.DTOs;
 using Fraud.Entities.Models;
 using Fraud.UseCase.Cards;
@@ -22,7 +23,7 @@ namespace Fraud.Interactor.Transactions
             _cardStateManagementUseCase = cardStateManagementUseCase;
         }
         
-        public TransactionAnalyzerResult AnalyzeTransactions(in Transaction[] transactions)
+        public ReturnResult<TransactionAnalyzerResult> AnalyzeTransactions(in Transaction[] transactions)
         {            
             if (transactions == null)
                 throw new ArgumentNullException(nameof(transactions));
@@ -47,7 +48,7 @@ namespace Fraud.Interactor.Transactions
             // TODO: Remove calling ICardStateManagement.ManageCardState after moving to microservices 
             Task.Run(() => _cardStateManagementUseCase.ManageCardState(transactionAnalyzerResult));
 
-            return transactionAnalyzerResult;
+            return ReturnResult<TransactionAnalyzerResult>.SuccessResult(transactionAnalyzerResult);
         }
     }
 }

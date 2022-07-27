@@ -10,7 +10,7 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
         public static void Configure()
         {
             DefaultTypeMap.MatchNamesWithUnderscores = true;
-            DapperExtensions.DapperExtensions.SqlDialect = new DapperExtensions.Sql.PostgreSqlDialect();
+            DapperExtensions.DapperExtensions.SqlDialect = new DapperExtensions.Sql.SqliteDialect();
             DapperExtensions.DapperExtensions.DefaultMapper = typeof(DapperClassMapper<>);
         }
 

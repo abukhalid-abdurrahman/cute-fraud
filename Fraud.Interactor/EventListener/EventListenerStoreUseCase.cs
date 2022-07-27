@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Fraud.Concerns;
 using Fraud.Entities.Enums;
 using Fraud.Entities.Models;
 using Fraud.UseCase.EventListener;
@@ -20,11 +21,11 @@ namespace Fraud.Interactor.EventListener
             };
         }
         
-        public async Task RaiseEvent(EventType eventType, Order order)
+        public async Task<ReturnResult<bool>> RaiseEvent(EventType eventType, Order order)
         {
             if(!_eventListeners.ContainsKey(eventType))
-                return;
-            await _eventListeners[eventType].HandleEvent(order);
+                return ReturnResult<bool>.FailResult(false);
+            return await _eventListeners[eventType].HandleEvent(order);
         }
     }
 }

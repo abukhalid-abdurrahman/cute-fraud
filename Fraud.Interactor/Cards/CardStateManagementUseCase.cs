@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Fraud.Concerns;
 using Fraud.Concerns.Configurations;
 using Fraud.Entities.DTOs;
 using Fraud.Infrastructure.Repository;
@@ -22,22 +23,24 @@ namespace Fraud.Interactor.Cards
             _rabbitMqConfigurations = rabbitMqConfigurations;
         }
 
-        public async Task ManageCardState(TransactionAnalyzerResult transactionAnalyzerResult)
+        public async Task<ReturnResult<bool>> ManageCardState(TransactionAnalyzerResult transactionAnalyzerResult)
         {
             var card = await _cardRepository
                 .UpdateCardPriority(transactionAnalyzerResult.CardToken, transactionAnalyzerResult.FraudPriority);
  
-            ICardStateUseCase cardStateUseCase = card.FraudPriority switch
+            ICardStateUseCase cardStateUseCase = card.Result.FraudPriority switch
             {
-                <= 0 => new DefaultCardStateUseCase(card),
-                >= 35 and < 70 => new PreSuspiciousCardStateUseCase(card),
-                >= 70 and < 80 => new SuspiciousCardStateUseCase(card, _messageBrokerUseCase, _rabbitMqConfigurations),
-                >= 80 and < 90 => new TemporaryBlockedCardStateUseCase(card, _messageBrokerUseCase, _rabbitMqConfigurations),
-                >= 90 => new BlockedCardStateUseCase(card, _messageBrokerUseCase, _rabbitMqConfigurations),
-                _ => new DefaultCardStateUseCase(card)
+                <= 0 => new DefaultCardStateUseCase(card.Result),
+                >= 35 and < 70 => new PreSuspiciousCardStateUseCase(card.Result),
+                >= 70 and < 80 => new SuspiciousCardStateUseCase(card.Result, _messageBrokerUseCase, _rabbitMqConfigurations),
+                >= 80 and < 90 => new TemporaryBlockedCardStateUseCase(card.Result, _messageBrokerUseCase, _rabbitMqConfigurations),
+                >= 90 => new BlockedCardStateUseCase(card.Result, _messageBrokerUseCase, _rabbitMqConfigurations),
+                _ => new DefaultCardStateUseCase(card.Result)
             };
 
             await cardStateUseCase.HandleState();
+
+            return ReturnResult<bool>.SuccessResult();
         }
     }
 }

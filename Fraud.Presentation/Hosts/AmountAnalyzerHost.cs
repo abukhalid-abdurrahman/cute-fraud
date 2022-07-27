@@ -43,7 +43,7 @@ namespace Fraud.Presentation.Hosts
             try
             {
                 var transactions = await _transactionRepository.FindLimit("");
-                _transactionAnalyzerUseCase.AnalyzeTransactions(transactions);
+                _transactionAnalyzerUseCase.AnalyzeTransactions(transactions.Result);
             }
             finally
             {

@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Fraud.Concerns;
 using Fraud.Concerns.Configurations;
 using Fraud.Entities.Enums;
 using Fraud.Entities.Models;
@@ -24,12 +25,14 @@ namespace Fraud.Interactor.States.CardStates
         public Card Card { get; set; }
         public CardState CardState => CardState.Blocked;
 
-        public async Task HandleState()
+        public async Task<ReturnResult<bool>> HandleState()
         {
             var cardStateMessage = JsonConvert.SerializeObject(Card);
             _messageBrokerUseCase.Send(_rabbitMqConfigurations.BlockCardRoutingKey,
                 _rabbitMqConfigurations.BlockCardExchangeName,
                 cardStateMessage);
+            
+            return ReturnResult<bool>.SuccessResult();
         }
     }
 }

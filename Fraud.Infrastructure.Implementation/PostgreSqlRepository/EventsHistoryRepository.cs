@@ -121,6 +121,57 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             return result;
         }
 
+        public async Task<ReturnResult<bool>> SetEventHistoryOrderStateAndEvent(string orderExternalRef, int eventId, int actionId)
+        {
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(EventsHistoryRepository));
+            
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+            
+            var result = new ReturnResult<bool>();
+            var errorMessageTemplate = "Event history updating failed in method SetEventHistoryOrderStateAndEvent! Rows affected: {0}, order_external_ref: {1}";
+            
+            const string query = @"UPDATE events_history SET 
+                                   event_id = @EventId,
+                                   action_id = @ActionId
+                                   WHERE order_external_ref = @OrderExternalRef;";
+            var rowsAffected = await _dbConnection.ExecuteAsync(query, new
+            {
+                OrderExternalRef = orderExternalRef,
+                EventId = eventId,
+                ActionId = actionId
+            });
+            if (rowsAffected <= 0)
+                FaultHandler.HandleError(ref result, string.Format(errorMessageTemplate, rowsAffected, orderExternalRef));
+            else
+                return ReturnResult<bool>.SuccessResult(true);
+            return result;
+        }
+
+        public async Task<ReturnResult<EventHistory>> GetEventHistoryByOrderId(string orderExternalRef)
+        {
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(EventsHistoryRepository));
+            
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+
+            var result = new ReturnResult<EventHistory>();
+            
+            const string query = @"SELECT * FROM events_history WHERE order_external_ref = @OrderExternalRef;";
+            var eventHistoryByOrder = await _dbConnection.QueryFirstOrDefaultAsync<EventHistory>(query, new
+            {
+                OrderExternalRef = orderExternalRef
+            });
+            if (eventHistoryByOrder == null)
+                FaultHandler.HandleWarning(ref result, "Event history not found!", $"Event history with order_external_Ref: {orderExternalRef} not found!");
+            else
+                return ReturnResult<EventHistory>.SuccessResult(eventHistoryByOrder);
+            
+            return result;
+        }
+
         private void ReleaseUnmanagedResources()
         {
             if(_dbConnection.State != ConnectionState.Closed)

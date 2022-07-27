@@ -45,7 +45,7 @@ namespace Fraud.Presentation.Hosts
                 var dateFrom = DateTimeOffset.Now.Date;
                 var dateTo = DateTimeOffset.Now.AddDays(1).AddHours(23).AddMinutes(0).AddSeconds(0);
                 var transactions = await _transactionRepository.FindByDateRange("", dateFrom, dateTo);
-                _transactionAnalyzerUseCase.AnalyzeTransactions(transactions);
+                _transactionAnalyzerUseCase.AnalyzeTransactions(transactions.Result);
             }
             finally
             {

@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Fraud.Concerns;
 using Fraud.Entities.Models;
 using Fraud.UseCase.EventListener;
 
@@ -16,7 +17,7 @@ namespace Fraud.Interactor.EventListener
             }
         }
 
-        public async Task HandleEvent(Order orderEntity)
+        public async Task<ReturnResult<bool>> HandleEvent(Order orderEntity)
         {
             throw new System.NotImplementedException();
         }

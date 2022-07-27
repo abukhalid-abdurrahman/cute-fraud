@@ -7,7 +7,7 @@ namespace Fraud.UseCase.Scenario
     public interface IScenarioUseCase
     {
         Task<ReturnResult<bool>> CreateUserScenario(GraphScenarioDto graphScenarioDto);
-        Task<ReturnResult<bool>> DeleteUserScenario();
+        // Task<ReturnResult<bool>> DeleteUserScenario();
         Task<ReturnResult<GraphScenarioDto>> GetUserScenario();
     }
 }

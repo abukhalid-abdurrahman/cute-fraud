@@ -4,13 +4,30 @@
     <projectFile>FraudDetection/FraudDetection.csproj</projectFile>
     <projectFile>Fraud.Tests/Fraud.Tests.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f1bfda7a-d067-4afc-9913-6f65971f1cb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Fraud.Interactor/PreBuilts/PreBuildsStore.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fraud.Interactor/ServiceActivator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FraudDetection/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Neo4JRepository/Neo4JCardRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Neo4JRepository/Neo4JCardRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Neo4JRepository/Neo4JTransactionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Neo4JRepository/Neo4JTransactionRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/UsersRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/UsersRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/DapperConfigurations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/DapperConfigurations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventsHistoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventsHistoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/EventListener/AmountAboveAverageEventListenerUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/EventListener/AmountAboveAverageEventListenerUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/EventListener/EventListenerStoreUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/EventListener/EventListenerStoreUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/EventListener/MinimumIntervalEventEventListenerUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/EventListener/MinimumIntervalEventEventListenerUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/EventListener/OperationsAboveAverageEventEventListenerUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/EventListener/OperationsAboveAverageEventEventListenerUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Scenarios/CreateUserScenarioInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Scenarios/CreateUserScenarioInteractor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Scenarios/GetUserScenarioInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Scenarios/GetUserScenarioInteractor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardStateUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardStateUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardStateUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardStateUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/PreSuspiciousCardStateUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/PreSuspiciousCardStateUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardStateUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardStateUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardStateUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardStateUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzerUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzerUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fraud.UseCase/Scenario/IScenarioUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Fraud.UseCase/Scenario/IScenarioUseCase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,38 +46,22 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/928D4059-EE31-42D5-83B9-391F138EE6AC/78/DateTimeOffset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/1D/IModelExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Fraud.Concerns/DateUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/16/IConnection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E02FC919-DD26-4764-80C4-7BFC10EF3027/8b/f5ad245d/ValueExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B0227-94B1-4CAD-995F-7CD89708E4CF/28/cfa98ee3/ConnectionFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/928D4059-EE31-42D5-83B9-391F138EE6AC/78/DateTimeOffset.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/16/IConnection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30E78F83-4B5A-4FEB-ABE0-083661AE49E3/3f/834bb5fa/PostgreSqlDialect.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/1C/IModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardStateUseCase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/25288F22-B7C5-48D8-ADF4-CB3C0171568E/74/4522aa5f/ContextUtils.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B0227-94B1-4CAD-995F-7CD89708E4CF/28/cfa98ee3/ConnectionFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/863B0227-94B1-4CAD-995F-7CD89708E4CF/37/EventingBasicConsumer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/928D4059-EE31-42D5-83B9-391F138EE6AC/75/Convert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/903EBCB8-20F4-49AA-A7E1-47C69B752DBC/11/IHostedService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Fraud.Interactor/EventListener/EventListenerStore.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Transactions/ITransactionAnalyzer.cs" />
-      <option value="$PROJECT_DIR$/Fraud.App/Program.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Concerns/ErrorHandling/ErrorHandler.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Concerns/FaultHandling/ErrorHandler.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/ReturnResult.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Transactions/ITransactionAnalyzerUseCase.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/MessageBroking/IMessageBrokerUseCase.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Scenario/IScenarioUseCase.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/EventListener/IEventListener.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/EventListener/IEventListenerStore.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardAnalyzerUseCase.cs" />
-      <option value="$PROJECT_DIR$/Fraud.UseCase/Cards/ICardState.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ICardRepository.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ILocalScenarioRepository.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IScenarioRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IStateRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/ITransactionRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IUserRepository.cs" />
@@ -76,7 +77,6 @@
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ActionRepository.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventsHistoryRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/InMemoryScenarioRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/StateRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/Response.cs" />
@@ -88,13 +88,31 @@
       <option value="$PROJECT_DIR$/Fraud.Entities/Models/Events.cs" />
       <option value="$PROJECT_DIR$/Fraud.Entities/DTOs/Event/EventTypeDto.cs" />
       <option value="$PROJECT_DIR$/Fraud.Interactor/PreBuilts/GetPreBuiltEntitiesListInteractor.cs" />
-      <option value="$PROJECT_DIR$/Fraud.Interactor/EventListener/AmountAboveAverageEventListenerUseCase.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IOrderRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/OrderRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/ScenarioRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/UsersRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Neo4JRepository/Neo4JCardRepository.cs" />
       <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/Neo4JRepository/Neo4JTransactionRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/EventListener/EventListenerStoreUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure/Repository/IEventsHistoryRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/EventsHistoryRepository.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/PreBuilts/PreBuiltsStore.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/ServiceActivator.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/PreBuilts/PreBuildsStore.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/EventListener/AmountAboveAverageEventListenerUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Infrastructure.Implementation/PostgreSqlRepository/DapperConfigurations.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/EventListener/MinimumIntervalEventEventListenerUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/EventListener/OperationsAboveAverageEventEventListenerUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.UseCase/Scenario/IScenarioUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/Scenarios/GetUserScenarioInteractor.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/Scenarios/CreateUserScenarioInteractor.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/BlockedCardStateUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/DefaultCardStateUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/PreSuspiciousCardStateUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/SuspiciousCardStateUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/States/CardStates/TemporaryBlockedCardStateUseCase.cs" />
+      <option value="$PROJECT_DIR$/Fraud.Interactor/Transactions/AmountAnalyzerUseCase.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="276jTNmBICmu5uuDv09Z6vAjnC8" />
@@ -203,7 +221,14 @@
       <workItem from="1655439618822" duration="8903000" />
       <workItem from="1655466854303" duration="6536000" />
       <workItem from="1655473965416" duration="712000" />
-      <workItem from="1655697675710" duration="15484000" />
+      <workItem from="1655697675710" duration="18300000" />
+      <workItem from="1655786465346" duration="17860000" />
+      <workItem from="1655873904625" duration="25023000" />
+      <workItem from="1656052929013" duration="5554000" />
+      <workItem from="1656391671157" duration="6046000" />
+      <workItem from="1656480260134" duration="1368000" />
+      <workItem from="1658831737054" duration="6209000" />
+      <workItem from="1658904000632" duration="4323000" />
     </task>
     <servers />
   </component>

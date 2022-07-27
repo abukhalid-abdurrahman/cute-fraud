@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Fraud.Concerns;
 using Fraud.Entities.Enums;
 using Fraud.Entities.Models;
 using Fraud.UseCase.Cards;
@@ -15,9 +16,9 @@ namespace Fraud.Interactor.States.CardStates
             Card = card;
         }
         
-        public Task HandleState()
+        public async Task<ReturnResult<bool>> HandleState()
         {
-            return Task.CompletedTask;
+            return ReturnResult<bool>.SuccessResult();
         }
     }
 }

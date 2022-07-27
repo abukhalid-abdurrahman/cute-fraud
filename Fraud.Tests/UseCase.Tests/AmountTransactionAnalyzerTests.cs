@@ -65,7 +65,7 @@ namespace Fraud.Tests.UseCase.Tests
                     DateCreatedUnix = DateTimeOffset.Now.AddDays(-1).ToUnixTimeSeconds()
                 }
             });
-            Assert.Less(transactionAnalyzerResult.FraudPriority, _lowPriorityValue);
+            Assert.Less(transactionAnalyzerResult.Result.FraudPriority, _lowPriorityValue);
         }
         
         [Test]
@@ -115,7 +115,7 @@ namespace Fraud.Tests.UseCase.Tests
                     DateCreatedUnix = DateTimeOffset.Now.AddMinutes(-5).ToUnixTimeSeconds()
                 }
             });
-            Assert.GreaterOrEqual(transactionAnalyzerResult.FraudPriority, _highPriorityValue);
+            Assert.GreaterOrEqual(transactionAnalyzerResult.Result.FraudPriority, _highPriorityValue);
         }
     }
 }
