@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Fraud.Concerns;
+using Fraud.Concerns.FaultHandling;
 using Fraud.Entities.Models;
 using Fraud.Infrastructure.Repository;
 using Fraud.Interactor.Transactions;
@@ -30,18 +31,38 @@ namespace Fraud.Interactor.Cards
         {
             if (transaction == null)
                 throw new ArgumentNullException(nameof(transaction));
+
+            var returnResult = new ReturnResult<bool>();
+            var errorMessage = "Error was occured in CardAnalyzerInteractor.AnalyzeCard()! Reason: {0}";
             
             // Creates a new transaction in db
-            await _transactionRepository.Create(transaction);
-            
-            var dateRangedTransactions = 
+            var transactionCreationResult = await _transactionRepository.Create(transaction);
+            if (!transactionCreationResult.IsSuccessfully)
+            {
+                FaultHandler.HandleError(ref returnResult, 
+                    transactionCreationResult.Exception, 
+                    string.Format(errorMessage, transactionCreationResult.Message), 
+                    transactionCreationResult.DetailedMessage);
+                return returnResult;
+            }
+
+            var dateRangedTransactionsResult = 
                 await _transactionRepository.FindByDateRange(transaction.SenderCardToken, 
                     DateUtils.GetStartDate().AddDays(-5), DateUtils.GetEndOfTheDate());
+
+            if (!dateRangedTransactionsResult.IsSuccessfully)
+            {
+                FaultHandler.HandleWarning(ref returnResult, 
+                    dateRangedTransactionsResult.Message, 
+                    string.Format(errorMessage, dateRangedTransactionsResult.DetailedMessage));
+                return returnResult;
+            }
             
-            await Task.Run(() => _amountAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions.Result));
-            await Task.Run(() => _periodicityAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions.Result));
-            await Task.Run(() => _countAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactions.Result));
-            return ReturnResult<bool>.SuccessResult();
+            await Task.Run(() => _amountAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactionsResult.Result));
+            await Task.Run(() => _periodicityAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactionsResult.Result));
+            await Task.Run(() => _countAnalyzerUseCase.AnalyzeTransactions(dateRangedTransactionsResult.Result));
+            
+            return ReturnResult<bool>.SuccessResult(true);
         }
     }
 }

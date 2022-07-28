@@ -31,7 +31,6 @@ namespace Fraud.Interactor.States.CardStates
             _messageBrokerUseCase.Send(_rabbitMqConfigurations.BlockCardRoutingKey,
                 _rabbitMqConfigurations.BlockCardExchangeName,
                 cardStateMessage);
-            
             return ReturnResult<bool>.SuccessResult();
         }
     }

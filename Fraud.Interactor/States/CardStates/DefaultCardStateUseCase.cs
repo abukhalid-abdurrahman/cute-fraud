@@ -16,9 +16,6 @@ namespace Fraud.Interactor.States.CardStates
             Card = card;
         }
 
-        public async Task<ReturnResult<bool>> HandleState()
-        {
-            return ReturnResult<bool>.SuccessResult();
-        }
+        public async Task<ReturnResult<bool>> HandleState() => ReturnResult<bool>.SuccessResult();
     }
 }

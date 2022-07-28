@@ -25,19 +25,18 @@ namespace Fraud.Interactor.Cards
 
         public async Task<ReturnResult<bool>> ManageCardState(TransactionAnalyzerResult transactionAnalyzerResult)
         {
-            var card = await _cardRepository
+            var updateCardPriorityResult = await _cardRepository
                 .UpdateCardPriority(transactionAnalyzerResult.CardToken, transactionAnalyzerResult.FraudPriority);
  
-            ICardStateUseCase cardStateUseCase = card.Result.FraudPriority switch
+            ICardStateUseCase cardStateUseCase = updateCardPriorityResult.Result.FraudPriority switch
             {
-                <= 0 => new DefaultCardStateUseCase(card.Result),
-                >= 35 and < 70 => new PreSuspiciousCardStateUseCase(card.Result),
-                >= 70 and < 80 => new SuspiciousCardStateUseCase(card.Result, _messageBrokerUseCase, _rabbitMqConfigurations),
-                >= 80 and < 90 => new TemporaryBlockedCardStateUseCase(card.Result, _messageBrokerUseCase, _rabbitMqConfigurations),
-                >= 90 => new BlockedCardStateUseCase(card.Result, _messageBrokerUseCase, _rabbitMqConfigurations),
-                _ => new DefaultCardStateUseCase(card.Result)
+                <= 0 => new DefaultCardStateUseCase(updateCardPriorityResult.Result),
+                >= 35 and < 70 => new PreSuspiciousCardStateUseCase(updateCardPriorityResult.Result),
+                >= 70 and < 80 => new SuspiciousCardStateUseCase(updateCardPriorityResult.Result, _messageBrokerUseCase, _rabbitMqConfigurations),
+                >= 80 and < 90 => new TemporaryBlockedCardStateUseCase(updateCardPriorityResult.Result, _messageBrokerUseCase, _rabbitMqConfigurations),
+                >= 90 => new BlockedCardStateUseCase(updateCardPriorityResult.Result, _messageBrokerUseCase, _rabbitMqConfigurations),
+                _ => new DefaultCardStateUseCase(updateCardPriorityResult.Result)
             };
-
             await cardStateUseCase.HandleState();
 
             return ReturnResult<bool>.SuccessResult();
