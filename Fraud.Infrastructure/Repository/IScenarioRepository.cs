@@ -10,6 +10,8 @@ namespace Fraud.Infrastructure.Repository
         Task<ReturnResult<int>> CreateScenario(Scenario scenario);
         Task<ReturnResult<bool>> SetScenarioRule(int scenarioId, string scenarioRule);
         Task<ReturnResult<string>> GetScenarioRule(int scenarioId);
+        Task<ReturnResult<Scenario>> GetScenarioByUserId(int userId);
         Task<ReturnResult<bool>> DeleteScenario(int scenarioId);
+        Task<ReturnResult<bool>> DeleteScenarioByUserId(int userId);
     }
 }

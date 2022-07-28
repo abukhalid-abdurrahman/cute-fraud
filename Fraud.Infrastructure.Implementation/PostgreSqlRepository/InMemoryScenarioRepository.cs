@@ -97,7 +97,7 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
                 throw new ObjectDisposedException(nameof(InMemoryScenarioRepository));
 
             var result = new ReturnResult<string>();
-            var errorMessageTemplate = "Scenario updating failed in method InMemoryScenarioRepository.SetScenarioRule! Reason: {0}";
+            var errorMessageTemplate = "Scenario fetching failed in method InMemoryScenarioRepository.SetScenarioRule! Reason: {0}";
 
             if (_scenarioGraphStorage.ContainsKey(scenarioId))
                 return ReturnResult<string>.SuccessResult(_scenarioGraphStorage[scenarioId].ToString());
@@ -122,6 +122,11 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             return scenarioRuleResult;
         }
 
+        public async Task<ReturnResult<Scenario>> GetScenarioByUserId(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<ReturnResult<bool>> DeleteScenario(int scenarioId)
         {            
             if (_isDisposed)
@@ -141,6 +146,42 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             if (_scenarioGraphStorage.ContainsKey(scenarioId))
             {
                 _scenarioGraphStorage.TryRemove(scenarioId, out _);
+                returnResult.Result = true;
+            }
+            else
+                FaultHandler.HandleWarning(ref returnResult, 
+                    "Scenario removing failed!", "Scenario not exist in InMemoryScenario storage!");
+            
+            return returnResult;
+        }
+
+        public async Task<ReturnResult<bool>> DeleteScenarioByUserId(int userId)
+        {
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(InMemoryScenarioRepository));
+
+            var returnResult = new ReturnResult<bool>();
+            var errorMessageTemplate = "Scenario deleting failed in method InMemoryScenarioRepository.DeleteScenarioByUserId! Reason: {0}";
+
+            var scenarioByUserIdResult = await _scenarioRepository.GetScenarioByUserId(userId);
+            if (!scenarioByUserIdResult.IsSuccessfully)
+            {
+                FaultHandler.HandleError(ref returnResult, 
+                    string.Format(errorMessageTemplate, scenarioByUserIdResult.Message));
+                return returnResult;
+            }
+
+            var deletionScenarioResult = await _scenarioRepository.DeleteScenario(scenarioByUserIdResult.Result.Id);
+            if (!deletionScenarioResult.IsSuccessfully)
+            {
+                FaultHandler.HandleError(ref returnResult, 
+                    string.Format(errorMessageTemplate, deletionScenarioResult.Message));
+                return returnResult;
+            }
+
+            if (_scenarioGraphStorage.ContainsKey(scenarioByUserIdResult.Result.Id))
+            {
+                _scenarioGraphStorage.TryRemove(scenarioByUserIdResult.Result.Id, out _);
                 returnResult.Result = true;
             }
             else
@@ -179,6 +220,46 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             _scenarioGraphStorage.TryAdd(scenarioId, scenarioGraph);
             
             return ReturnResult<GraphScenarioDto>.SuccessResult(scenarioGraph);
+        }
+
+        public async Task<ReturnResult<GraphScenarioDto>> GetScenarioGraphByUserId(int userId)
+        {
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(InMemoryScenarioRepository));
+
+            var result = new ReturnResult<GraphScenarioDto>();
+            var errorMessageTemplate = "Scenario fetching failed in method InMemoryScenarioRepository.GetScenarioGraphByUserId! Reason: {0}";
+
+            var scenarioByUserIdResult = await _scenarioRepository.GetScenarioByUserId(userId);
+            if (!scenarioByUserIdResult.IsSuccessfully)
+            {
+                FaultHandler.HandleError(ref result, 
+                    string.Format(errorMessageTemplate, scenarioByUserIdResult.Message));
+                return result;
+            }
+
+            if (_scenarioGraphStorage.ContainsKey(scenarioByUserIdResult.Result.Id))
+                return ReturnResult<GraphScenarioDto>.SuccessResult(_scenarioGraphStorage[scenarioByUserIdResult.Result.Id]);
+            
+            var scenarioRuleResult = await _scenarioRepository.GetScenarioRule(scenarioByUserIdResult.Result.Id);
+            if (!scenarioRuleResult.IsSuccessfully)
+            {
+                FaultHandler.HandleError(ref result, 
+                    string.Format(errorMessageTemplate, scenarioRuleResult.Message));
+                return result;
+            }
+            
+            var scenarioGraph = JsonConvert.DeserializeObject<GraphScenarioDto>(scenarioRuleResult.Result);
+            if (scenarioGraph == null)
+            {
+                FaultHandler.HandleError(ref result, 
+                    string.Format(errorMessageTemplate, $"{scenarioRuleResult.Result} failed to be deserialized into object of type {nameof(GraphScenarioDto)}"));
+                return result;
+            }
+            
+            _scenarioGraphStorage.TryAdd(scenarioByUserIdResult.Result.Id, scenarioGraph);
+
+            return result;
         }
 
         private void ReleaseUnmanagedResources()

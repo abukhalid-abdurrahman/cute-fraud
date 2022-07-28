@@ -7,5 +7,6 @@ namespace Fraud.Infrastructure.Repository
     public interface ILocalScenarioRepository : IScenarioRepository
     {
         Task<ReturnResult<GraphScenarioDto>> GetScenarioGraph(int scenarioId);
+        Task<ReturnResult<GraphScenarioDto>> GetScenarioGraphByUserId(int userId);
     }
 }

@@ -15,5 +15,13 @@ namespace Fraud.Entities.DTOs
                 Message = returnResult.Message,
                 Payload = returnResult.Result
             };
+        
+        public static Response<T> FailResponse(string message = null) =>
+            new()
+            {
+                Code = 500,
+                Message = message,
+                Payload = default
+            };
     }
 }

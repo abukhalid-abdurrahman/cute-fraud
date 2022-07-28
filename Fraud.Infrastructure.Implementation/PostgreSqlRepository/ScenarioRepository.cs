@@ -86,6 +86,28 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             return returnResult;
         }
 
+        public async Task<ReturnResult<Scenario>> GetScenarioByUserId(int userId)
+        {
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(OrderRepository));
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+
+            var returnResult = new ReturnResult<Scenario>();
+            
+            const string query = @"SELECT * FROM scenarios WHERE user_id = @UserId;";
+            var scenarioEntity = await _dbConnection.QueryFirstOrDefaultAsync<Scenario>(query, new
+            {
+                UserId = userId
+            });
+            
+            if (scenarioEntity == null)
+                FaultHandler.HandleError(ref returnResult, $"Scenario with user_id {userId} is null or was not found!");
+            else
+                return ReturnResult<Scenario>.SuccessResult(scenarioEntity);
+            return returnResult;
+        }
+
         public async Task<ReturnResult<bool>> DeleteScenario(int scenarioId)
         {
             if (_isDisposed)
@@ -99,6 +121,30 @@ namespace Fraud.Infrastructure.Implementation.PostgreSqlRepository
             var rowsAffected = await _dbConnection.ExecuteAsync(query, new
             {
                 ScenarioId = scenarioId
+            });
+            if (rowsAffected < 0)
+            {
+                returnResult.Result = false;
+                FaultHandler.HandleError(ref returnResult, $"Scenario deleting failed, rows affected: {rowsAffected}");
+            }
+            else
+                return ReturnResult<bool>.SuccessResult(true);
+            return returnResult;
+        }
+
+        public async Task<ReturnResult<bool>> DeleteScenarioByUserId(int userId)
+        {
+            if (_isDisposed)
+                throw new ObjectDisposedException(nameof(OrderRepository));
+            if(_dbConnection.State != ConnectionState.Open)
+                _dbConnection.Open();
+
+            var returnResult = new ReturnResult<bool>();
+            
+            const string query = @"DELETE FROM scenarios WHERE user_id = @UserId;";
+            var rowsAffected = await _dbConnection.ExecuteAsync(query, new
+            {
+                UserId = userId
             });
             if (rowsAffected < 0)
             {
